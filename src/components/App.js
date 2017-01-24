@@ -24,18 +24,38 @@ const App = React.createClass({
     console.log(this.state);
   },
 
+  handleUsername(event){
+    console.log('username change')
+    this.setState({username:event.target.value})
+    console.log(this.state);
+  },
+  handlePassword(event){
+    this.setState({password:event.target.value})
+    console.log(this.state);
+  },
+
   handleLoginSubmit(event){
     event.preventDefault();
     console.log('clicked submit');
+    console.log(this.state);
 
   },
 
   render(){
-    //<LoginForm></LoginForm>
-    return(
-      //<div> TESTING </div>
+    var Display =
       <LoginForm
-        handleLoginSubmit={this.handleLoginSubmit}></LoginForm>
+          username={this.state.username}
+          password={this.state.password}
+          handleUsername={this.handleUsername}
+          handlePassword={this.handlePassword}
+          handleLoginSubmit={this.handleLoginSubmit}
+        >
+        </LoginForm>
+    return(
+      <main>
+        {Display}
+      </main>
+
     );
   }
 
