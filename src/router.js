@@ -17,16 +17,9 @@ var AppRouter = React.createClass({
 
         <Router history={browserHistory}>
           <Route path="/" component={landingContainer} />
-        </Router>
-
-        <Router history={browserHistory}>
           <Route path="/feed" component={postsFeed} />
-        </Router>
-
-        <Router history={browserHistory}>
           <Route path="/profile" component={profileContainer} />
         </Router>
-
 
     </div>
 
