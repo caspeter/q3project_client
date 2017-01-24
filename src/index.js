@@ -12,9 +12,9 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   //<Provider store={store}>
-  <MuiThemeProvider>
-    <Router />
-  </MuiThemeProvider>
+    <MuiThemeProvider>
+      <Router />
+    </MuiThemeProvider>
   //</Provider>
   ,
   document.getElementById('root')
