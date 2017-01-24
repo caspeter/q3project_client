@@ -34,6 +34,13 @@ const ProfileForm = React.createClass({
               <MenuItem value={1} primaryText="Architect" />
               <MenuItem value={1} primaryText="None" />
             </DropDownMenu>
+            <label>Profile URL:</label>
+            <input type="text"></input>
+            <label>Website Link:</label>
+            <input type="text"></input>
+            <label>BIO:</label>
+            <input type="text"></input>
+            <button type="submit">Submit</button>
         </form>
       </div>
     );
