@@ -10,8 +10,9 @@ import CardText from 'material-ui/Card/CardText';
 import Avatar from 'material-ui/Avatar/Avatar';
 
 const post = React.createClass({
-  getInitialState() {
-    return null;
+
+  componentDidMount () {
+    console.log(this.props.postData);
   },
 
   render() {
@@ -19,7 +20,7 @@ const post = React.createClass({
       <Card className="uiCard">
         <Avatar/>
         <CardTitle>Post Title</CardTitle>
-        <CardText>Post Body</CardText>
+        <CardText>{this.props.postData.description}</CardText>
       </Card>
     )
   }
