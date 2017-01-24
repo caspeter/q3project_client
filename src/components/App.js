@@ -8,6 +8,7 @@ import request from 'superagent';
 // import Post from './Post.js';
 // import PostsContainer from './PostsContainer';
 // import Profile from './Profile';
+import LoginForm from './Login.js';
 
 const App = React.createClass({
 
@@ -19,10 +20,16 @@ const App = React.createClass({
     console.log('updated')
   },
 
+  handleLoginSubmit(event) {
+    event.preventDevault();
+    console.log('clicked submit');
+  },
+
   render(){
-    //<div>Test</div>;
+    <LoginForm></LoginForm>
     return(
-      <div> TESTING </div>
+      //<div> TESTING </div>
+      <LoginForm></LoginForm>
     );
   }
 
