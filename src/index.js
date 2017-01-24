@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import { Provider } from 'react-redux';
 //import store from './store';
-import App from './components/App.js';
+import Router from './router.js';
 import './index.css';
 
 //Material UI ===========================================
@@ -13,7 +13,7 @@ injectTapEventPlugin();
 ReactDOM.render(
   //<Provider store={store}>
     <MuiThemeProvider>
-      <App />
+      <Router />
     </MuiThemeProvider>
   //</Provider>
   ,
