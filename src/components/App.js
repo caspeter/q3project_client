@@ -12,24 +12,30 @@ import LoginForm from './Login.js';
 
 const App = React.createClass({
 
-  // getInitialState(){
-  //   return state;
-  // },
-
-  componentDidUpdate(){
-    console.log('updated')
+  getInitialState(){
+    return ({
+      username: '',
+      password: ''
+    });
   },
 
-  handleLoginSubmit(event) {
-    event.preventDevault();
+  componentDidMount(){
+    console.log('updated')
+    console.log(this.state);
+  },
+
+  handleLoginSubmit(event){
+    event.preventDefault();
     console.log('clicked submit');
+
   },
 
   render(){
-    <LoginForm></LoginForm>
+    //<LoginForm></LoginForm>
     return(
       //<div> TESTING </div>
-      <LoginForm></LoginForm>
+      <LoginForm
+        handleLoginSubmit={this.handleLoginSubmit}></LoginForm>
     );
   }
 

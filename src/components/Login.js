@@ -2,15 +2,16 @@ import React from 'react';
 
 const LoginForm = React.createClass({
   render(){
-    const message = 'hello'
+
 
     return(
       <div>
-        {message}
-        <form>
-          <input type="text" id="username"></input>
-          <input type="text" id="password"></input>
-          <button type="submit" value="submit" id="submit"></button>
+        <form onSubmit={this.props.handleLoginSubmit}>
+          <label>Username: </label>
+          <input type="text" id="username" value={this.props.username}></input>
+          <label>Password: </label>
+          <input type="text" id="password" value={this.props.password}></input>
+          <button type="submit" value="Login" id="submit">Submit</button>
         </form>
       </div>
     );
