@@ -20,25 +20,20 @@ const App = React.createClass({
   },
 
   componentDidMount(){
-    console.log('updated')
     console.log(this.state);
   },
 
   handleUsername(event){
     console.log('username change')
     this.setState({username:event.target.value})
-    console.log(this.state);
   },
   handlePassword(event){
     this.setState({password:event.target.value})
-    console.log(this.state);
   },
 
   handleLoginSubmit(event){
     event.preventDefault();
-    console.log('clicked submit');
     console.log(this.state);
-
   },
 
   render(){

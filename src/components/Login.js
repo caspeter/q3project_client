@@ -3,7 +3,6 @@ import React from 'react';
 const LoginForm = React.createClass({
   render(){
 
-    console.log(this.props)
     return(
       <div>
       <form onSubmit={this.props.handleLoginSubmit}>
