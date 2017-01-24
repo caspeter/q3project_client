@@ -16,8 +16,6 @@ var AppRouter = React.createClass({
         <Route path="/" component={landingContainer} />
       </Router>
     )
-
-
   }
 })
 

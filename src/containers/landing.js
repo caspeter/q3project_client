@@ -43,6 +43,7 @@ render: function(){
   return(
     <div>
       {login}
+      <Nav />
     </div>
   );
 

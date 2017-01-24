@@ -5,10 +5,14 @@ import ReactDOM from 'react-dom';
 //import App from './components/App.js';
 //import './index.css';
 import Router from './router.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 ReactDOM.render(
   //<Provider store={store}>
-    <Router />
+    <MuiThemeProvider>
+      <Router />
+    </MuiThemeProvider>
   //</Provider>
   ,
   document.getElementById('root')
