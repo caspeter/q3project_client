@@ -11,18 +11,10 @@ body {
 .postsContainer {
   width: 960px;
   height: 500px;
-  border: 1px solid black;
   margin: 0 auto;
 }
 
-.post {
-  width: 100% inherit;
-  height: auto;
-  border: 1px solid tomato;
-  padding: 5px;
+.uiCard {
   margin: 10px;
-}
-
-.post_picture {
-  
+  padding: 10px;
 }
