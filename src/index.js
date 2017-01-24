@@ -5,9 +5,16 @@ import ReactDOM from 'react-dom';
 import App from './components/App.js';
 import './index.css';
 
+//Material UI ===========================================
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 ReactDOM.render(
   //<Provider store={store}>
-    <App />
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
   //</Provider>
   ,
   document.getElementById('root')

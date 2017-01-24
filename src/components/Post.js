@@ -1,6 +1,11 @@
 'use strict';
 
 import React from 'react';
+import Card from 'material-ui/Card/Card';
+import CardActions from 'material-ui/Card/CardActions';
+import CardHeader from 'material-ui/Card/CardHeader';
+import CardMedia from 'material-ui/Card/CardMedia';
+import CardTitle from 'material-ui/Card/CardTitle';
 
 const post = React.createClass({
   getInitialState() {
@@ -9,9 +14,9 @@ const post = React.createClass({
 
   render() {
     return(
-      <div className="post">
-        <p>I am a post</p>
-      </div>
+      <Card>
+        <CardTitle>Hello World</CardTitle>
+      </Card>
     )
   }
 })
