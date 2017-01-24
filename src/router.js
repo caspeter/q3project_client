@@ -3,20 +3,22 @@ import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 
 
 //import containers:
-
+import landingContainer from './containers/landing.js';
 
 //import components:
-import login from "./components/login.js";
+
 
 var AppRouter = React.createClass({
 
   render: function(){
     return(
       <Router history={browserHistory}>
-        <Route path="/" container={LandingPage} />
+        <Route path="/" component={landingContainer} />
       </Router>
     )
 
 
   }
 })
+
+export default AppRouter;
