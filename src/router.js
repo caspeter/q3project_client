@@ -22,8 +22,6 @@ var AppRouter = React.createClass({
         </Router>
       </div>
     )
-
-
   }
 })
 
