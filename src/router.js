@@ -14,7 +14,7 @@ var AppRouter = React.createClass({
   render: function(){
     return(
       <div>
-        
+
         <Router history={browserHistory}>
           <Route path="/" component={landingContainer} />
         </Router>
@@ -31,8 +31,6 @@ var AppRouter = React.createClass({
     </div>
 
     )
-
-
   }
 })
 
