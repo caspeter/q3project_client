@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PostsContainer from '../components/PostsContainer';
+import NavBar from '../components/Nav';
 
 const feed = React.createClass({
   getInitialState() {
@@ -10,7 +11,10 @@ const feed = React.createClass({
 
   render() {
     return (
+      <div>
+      <NavBar/>
       <PostsContainer></PostsContainer>
+      </div>
     )
   }
 });
