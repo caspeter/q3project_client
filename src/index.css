@@ -8,13 +8,55 @@ body {
   box-sizing: border-box;
 }
 
+h4, p {
+  margin: 2px 0 2px 0;
+}
+
+th, td {
+  padding: 0px !important;
+  height: 0px !important;
+  font-size: 15px !important;
+  overflow: scroll !important;
+  text-overflow: inherit !important;
+}
+
+.rightAlign {
+  text-align: right;
+  padding: 0 0 10px 0 !important;
+}
+
+.inlineChip {
+  display: inline !important;
+  padding: 5px !important;
+  margin: 5px !important;
+}
+
 .postsContainer {
-  width: 960px;
+  max-width: 960px;
   height: 500px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .uiCard {
-  margin: 10px;
-  padding: 10px;
+  margin: 20px;
+}
+
+.cardBody {
+  padding-top: 0px !important;
+}
+
+
+/* --- Landing page styling --- */
+img{
+  width: 100%;
+}
+
+.center{
+  display: flex;
+  direction: row;
+  justify-content: center
+}
+
+.marginRight {
+  margin-right: 50px;
 }
