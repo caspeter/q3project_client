@@ -11,13 +11,30 @@ import Avatar from 'material-ui/Avatar/Avatar';
 import Button from 'material-ui/RaisedButton';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
+import request from 'superagent';
+var DATABASE_URL = 'http://localhost:5000';
+
 
 const post = React.createClass({
 
   getInitialState () {
     return({
+      comments: [],
       expanded: false
     })
+  },
+
+  getComments () {
+    let postId = this.props.postData.id;
+    request
+    .get(DATABASE_URL + `/api/comments/${postId}`)
+    .end((err, res) => {
+      console.log(res.body);
+    })
+  },
+
+  componentDidMount() {
+    this.getComments();
   },
 
   render() {
@@ -65,13 +82,9 @@ const post = React.createClass({
             label="Favorite Post"
             primary={true}
           />
-          <Button
-            label="View Comments"
-            primary={true}
-          />
         </CardActions>
         <CardText expandable={true}>
-        <p>Hello World</p>
+        <h3>Comments</h3>
         </CardText>
       </Card>
     )
