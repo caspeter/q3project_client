@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Post from './Post';
+import request from 'superagent';
+
 var postData = [
         {
           "id": 1,
@@ -43,6 +45,15 @@ const PostsContainer = React.createClass({
     });
   },
 
+  componentDidMount() {
+    request
+    .get('http://localhost:5000/api/posts')
+    .then((res) => {
+      this.state.postData = res.body;
+      console.log(this.state.postData);
+    })
+  },
+
   render() {
     return(
       <div className="postsContainer">
@@ -50,6 +61,7 @@ const PostsContainer = React.createClass({
           this.state.postData.map(function (post) {
             return (
               <Post
+                key={post.id}
                 postData={post}
               />
             )

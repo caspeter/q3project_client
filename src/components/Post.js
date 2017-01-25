@@ -14,7 +14,7 @@ import Button from 'material-ui/RaisedButton';
 const post = React.createClass({
 
   componentDidMount () {
-    console.log(this.props.postData);
+    // console.log(this.props.postData);
   },
 
   render() {
@@ -30,11 +30,11 @@ const post = React.createClass({
         <CardActions>
           <Button
             label="Favorite Post"
-            primary='true'
+            primary={true}
           />
           <Button
             label="View Comments"
-            primary="true"
+            primary={true}
           />
         </CardActions>
       </Card>
