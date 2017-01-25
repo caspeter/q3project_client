@@ -25,6 +25,12 @@ th, td {
   padding: 0 0 10px 0 !important;
 }
 
+.inlineChip {
+  display: inline !important;
+  padding: 5px !important;
+  margin: 5px !important;
+}
+
 .postsContainer {
   max-width: 960px;
   height: 500px;
