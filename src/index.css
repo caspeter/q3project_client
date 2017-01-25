@@ -44,3 +44,19 @@ th, td {
 .cardBody {
   padding-top: 0px !important;
 }
+
+
+/* --- Landing page styling --- */
+img{
+  width: 100%;
+}
+
+.center{
+  display: flex;
+  direction: row;
+  justify-content: center
+}
+
+.marginRight {
+  margin-right: 50px;
+}
