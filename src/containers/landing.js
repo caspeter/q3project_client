@@ -1,7 +1,9 @@
+'use strict';
 import React from 'react';
 import request from 'superagent';
 import LoginForm from '../components/Login.js';
 import Nav from '../components/Nav.js';
+import Nav1 from '../components/Navlogin.js';
 
 
 var landingContainer = React.createClass({
@@ -30,6 +32,8 @@ var landingContainer = React.createClass({
       console.log(this.state);
     },
 
+
+
 render: function(){
 
     var login = (true) ?
@@ -40,10 +44,18 @@ render: function(){
       handlePassword={this.handlePassword}
       handleLoginSubmit={this.handleLoginSubmit}
     /> : null;
+
+    const isLogged = (localStorage.username) ?
+      <Nav /> : <Nav1 />
+
+
+
   return(
+
     <div>
+
+      {isLogged}
       {login}
-      <Nav />
     </div>
   );
 
