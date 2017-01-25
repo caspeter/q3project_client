@@ -4,7 +4,9 @@ import React from 'react';
 import Post from './Post';
 import request from 'superagent';
 
-var postData = [
+const DATABASE_URL = "http://localhost:5000"
+
+var postsData = [
         {
           "id": 1,
           "description": "I need someone to paint the inside of my dungeon",
@@ -41,32 +43,45 @@ const PostsContainer = React.createClass({
 
   getInitialState() {
     return ({
-      postData: postData
+      postData: []
     });
   },
 
-  componentDidMount() {
+  getPostDataFromAPI() {
     request
-    .get('http://localhost:5000/api/posts')
-    .then((res) => {
-      this.state.postData = res.body;
-      console.log(this.state.postData);
+    .get(DATABASE_URL + '/api/posts')
+    .end((err, res) => {
+      if(err) {
+        console.log(err);
+      }else{
+        let postData = [];
+
+        for(var post in res.body){
+          postData.push(res.body[post])
+        }
+        this.setState({postData: postData});
+        console.log(this.state.postData);
+      }
     })
+  },
+
+  componentDidMount() {
+    this.getPostDataFromAPI();
   },
 
   render() {
     return(
       <div className="postsContainer">
-        {
-          this.state.postData.map(function (post) {
-            return (
-              <Post
-                key={post.id}
-                postData={post}
-              />
-            )
-          })
-        }
+      {
+        this.state.postData.map(function (post) {
+          return (
+            <Post
+              key={post.id}
+              postData={post}
+            />
+          )
+        })
+      }
       </div>
     );
   }
