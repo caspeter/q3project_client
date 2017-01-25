@@ -10,13 +10,16 @@ var profileContainer = React.createClass({
       password: ''
     });
   },
+
   componentDidMount(){
     console.log(this.state);
   },
-  handleProfileSubmit(event){
-    event.preventDefault();
-    console.log('profile Submitted click'),
-    this.setState({submitted:false})
+
+  handleProfileSubmit(item){
+    console.log(item);
+    //event.preventDefault();
+    console.log('profile Submitted click', item),
+    this.setState(false)
   },
 
   render: function(){
@@ -27,6 +30,7 @@ var profileContainer = React.createClass({
     return(
       <div>
         {profileForm}
+
       </div>
     )
   }

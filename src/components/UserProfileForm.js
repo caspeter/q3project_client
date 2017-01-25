@@ -10,7 +10,7 @@ const ProfileForm = React.createClass({
 
   getInitialState(){
     return ({
-      value: ''
+      firstname:''
     });
   },
 
@@ -19,10 +19,17 @@ const ProfileForm = React.createClass({
     this.setState({value});
   },
 
+  setValue: function (field, event) {
+    //If the input fields were directly within this
+    //this component, we could use this.refs.[FIELD].value
+    //Instead, we want to save the data for when the form is submitted
+    var object = {};
+    object[field] = event.target.value;
+    this.setState(object);
+    console.log(this.state);
+  },
 
   render: function(){
-
-    console.log(this.state);
     return(
       <div className="profileContainer">
         <form onSubmit={this.props.handleProfileSubmit}>
@@ -31,7 +38,7 @@ const ProfileForm = React.createClass({
           <div className="row">
             <div className="col-md-5">
               <TextField type="text"
-                id="firstname" floatingLabelText="First Name" value={this.props.firstname}/>
+                id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstname')} value={this.state.firstname}/>
             </div>
             <div className="col-sm-offset-2 col-md-5">
               <TextField type="text" floatingLabelText="Last Name" value={this.props.lastname}/>
