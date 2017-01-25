@@ -34,7 +34,7 @@ var landingContainer = React.createClass({
     },
 
     handleLogoutSubmit(event){
-      sessionStorage.removeItem('username');
+      sessionStorage.removeItem('username', this.state.username );
     },
 
 

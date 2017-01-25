@@ -9,10 +9,7 @@ const Nav1 = React.createClass({
   render: function(){
     return(
      <nav>
-
          <div>Please Login Below</div>
-
-          
      </nav>
    );
   }
