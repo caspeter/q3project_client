@@ -15,7 +15,9 @@ h4, p {
 th, td {
   padding: 0px !important;
   height: 0px !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
+  overflow: scroll !important;
+  text-overflow: inherit !important;
 }
 
 .rightAlign {

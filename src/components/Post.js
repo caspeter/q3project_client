@@ -48,19 +48,7 @@ const post = React.createClass({
           showExpandableButton={true}
         />
         <CardText className="cardBody">
-
-          <Table>
-            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-              <TableRow>
-                <TableHeaderColumn>Description</TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody displayRowCheckbox={false}>
-              <TableRow>
-                <TableRowColumn>{this.props.postData.description}</TableRowColumn>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <p>{this.props.postData.description}</p>
 
           <Table>
             <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
