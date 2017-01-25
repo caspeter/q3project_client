@@ -15,12 +15,20 @@ h4, p {
 th, td {
   padding: 0px !important;
   height: 0px !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
+  overflow: scroll !important;
+  text-overflow: inherit !important;
 }
 
 .rightAlign {
   text-align: right;
   padding: 0 0 10px 0 !important;
+}
+
+.inlineChip {
+  display: inline !important;
+  padding: 5px !important;
+  margin: 5px !important;
 }
 
 .postsContainer {
@@ -35,4 +43,20 @@ th, td {
 
 .cardBody {
   padding-top: 0px !important;
+}
+
+
+/* --- Landing page styling --- */
+img{
+  width: 100%;
+}
+
+.center{
+  display: flex;
+  direction: row;
+  justify-content: center
+}
+
+.marginRight {
+  margin-right: 50px;
 }

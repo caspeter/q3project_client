@@ -10,6 +10,7 @@ import CardText from 'material-ui/Card/CardText';
 import Avatar from 'material-ui/Avatar/Avatar';
 import Button from 'material-ui/RaisedButton';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import Chip from 'material-ui/Chip';
 
 import request from 'superagent';
 var DATABASE_URL = 'http://localhost:5000';
@@ -20,9 +21,9 @@ const post = React.createClass({
   getInitialState () {
     return({
       comments: [],
+      skills: [],
       expanded: false
     })
-    console.log(this.state.comments);
   },
 
   getComments() {
@@ -34,8 +35,16 @@ const post = React.createClass({
     })
   },
 
+  setupSkills() {
+    let skillsArray = [];
+    for(var skill in this.props.postData.skills){
+      this.state.skills.push(this.props.postData.skills[skill])
+    }
+  },
+
   componentDidMount() {
     this.getComments();
+    this.setupSkills();
   },
 
   render() {
@@ -48,19 +57,7 @@ const post = React.createClass({
           showExpandableButton={true}
         />
         <CardText className="cardBody">
-
-          <Table>
-            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-              <TableRow>
-                <TableHeaderColumn>Description</TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody displayRowCheckbox={false}>
-              <TableRow>
-                <TableRowColumn>{this.props.postData.description}</TableRowColumn>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <p>{this.props.postData.description}</p>
 
           <Table>
             <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
@@ -76,7 +73,17 @@ const post = React.createClass({
               </TableRow>
             </TableBody>
           </Table>
-
+          <div>
+            {
+              this.state.skills.map((skill) => {
+                return (
+                  <Chip className="inlineChip">
+                    {skill}
+                  </Chip>
+                );
+              })
+            }
+          </div>
         </CardText>
         <CardActions className="rightAlign">
           <Button
