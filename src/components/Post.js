@@ -22,14 +22,15 @@ const post = React.createClass({
       comments: [],
       expanded: false
     })
+    console.log(this.state.comments);
   },
 
-  getComments () {
-    let postId = this.props.postData.id;
+  getComments() {
+    let postId = this.props.postData.id
     request
     .get(DATABASE_URL + `/api/comments/${postId}`)
     .end((err, res) => {
-      console.log(res.body);
+      this.setState({comments: res.body});
     })
   },
 
@@ -84,7 +85,11 @@ const post = React.createClass({
           />
         </CardActions>
         <CardText expandable={true}>
-        <h3>Comments</h3>
+          <h3>Comments</h3>
+          <div>
+            {
+            }
+          </div>
         </CardText>
       </Card>
     )
