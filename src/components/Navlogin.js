@@ -10,11 +10,9 @@ const Nav1 = React.createClass({
     return(
      <nav>
 
-         <RaisedButton
-            href="/"
-            label="Home"
-            primary={true}
-          />
+         <div>Please Login Below</div>
+
+          
      </nav>
    );
   }

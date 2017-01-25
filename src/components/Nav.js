@@ -28,13 +28,17 @@ const Nav = React.createClass({
             primary={true}
           />
           { " " }
+
          <RaisedButton
+            onClick={this.props.handleLogoutSubmit}
             href="/"
             label="Logout"
             primary={true}
           />
-        </nav>
-    
+      
+
+    </nav>
+
    );
   }
 

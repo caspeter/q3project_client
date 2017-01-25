@@ -12,6 +12,7 @@ const LoginForm = React.createClass({
         <label>Password: </label>
         <input type="text" placeholder="password" value={this.props.password} onChange={this.props.handlePassword}/>
         <input type="submit" value="Login" id="submit"/>
+        
       </form>
     </div>
     );

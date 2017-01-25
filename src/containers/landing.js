@@ -29,12 +29,20 @@ var landingContainer = React.createClass({
 
     handleLoginSubmit(event){
       event.preventDefault();
-      console.log(this.state);
+      sessionStorage.setItem( 'username', this.state.username );
+    //  console.log(sessionStorage.username);
+    },
+
+    handleLogoutSubmit(event){
+      sessionStorage.removeItem('username');
     },
 
 
 
+
 render: function(){
+
+
 
     var login = (true) ?
     <LoginForm
@@ -45,7 +53,14 @@ render: function(){
       handleLoginSubmit={this.handleLoginSubmit}
     /> : null;
 
-    const isLogged = (localStorage.username) ?
+
+
+
+
+
+
+    sessionStorage.getItem('username');
+    const isLogged = (sessionStorage.username) ?
       <Nav /> : <Nav1 />
 
 
