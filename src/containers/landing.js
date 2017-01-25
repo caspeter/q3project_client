@@ -2,6 +2,8 @@ import React from 'react';
 import request from 'superagent';
 import LoginForm from '../components/Login.js';
 import Nav from '../components/Nav.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 
 var landingContainer = React.createClass({
@@ -41,10 +43,11 @@ render: function(){
       handleLoginSubmit={this.handleLoginSubmit}
     /> : null;
   return(
-    <div>
-      {login}
-      <Nav />
-    </div>
+      <div>
+        <Nav />
+        {login}
+        <img src="img/sketching.jpg" />
+      </div>
   );
 
   }
