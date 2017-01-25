@@ -3,6 +3,9 @@ import TextField from 'material-ui/TextField';
 import {orange500, blue500} from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Toggle from 'material-ui/Toggle';
 const styles = {
   block: {
     maxWidth: 250,
@@ -27,6 +30,8 @@ var CreatePost = React.createClass({
 
   render: function () {
     return (
+      <Card>
+      <CardText>
       <form>
         <label>
           Title:
@@ -67,6 +72,8 @@ var CreatePost = React.createClass({
           </div>
         <RaisedButton type="submit" value="submit">Submit</RaisedButton>
       </form>
+      </CardText>
+      </Card>
     )
   }
 })
