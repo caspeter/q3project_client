@@ -59,8 +59,9 @@ const PostsContainer = React.createClass({
         for(var post in res.body){
           postData.push(res.body[post])
         }
+
+        console.log(postData);
         this.setState({postData: postData});
-        console.log(this.state.postData);
       }
     })
   },

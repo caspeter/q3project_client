@@ -8,6 +8,21 @@ body {
   box-sizing: border-box;
 }
 
+h4, p {
+  margin: 2px 0 2px 0;
+}
+
+th, td {
+  padding: 0px !important;
+  height: 0px !important;
+  font-size: 16px !important;
+}
+
+.rightAlign {
+  text-align: right;
+  padding: 0 0 10px 0 !important;
+}
+
 .postsContainer {
   max-width: 960px;
   height: 500px;
@@ -18,15 +33,6 @@ body {
   margin: 20px;
 }
 
-.postTitle {
-  margin: 0px;
-}
-
-.postUser {
-  margin-top: -30px;
-  color: gray;
-}
-.postAction {
-  width: auto;
-  padding: 0 10px 0 10px;
+.cardBody {
+  padding-top: 0px !important;
 }
