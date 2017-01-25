@@ -60,3 +60,13 @@ img{
 .marginRight {
   margin-right: 50px;
 }
+
+.profileContainer{
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profileSubmitButton{
+  text-align: center;
+}
