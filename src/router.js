@@ -14,15 +14,12 @@ var AppRouter = React.createClass({
   render: function(){
     return(
       <div>
-
         <Router history={browserHistory}>
           <Route path="/" component={landingContainer} />
           <Route path="/feed" component={postsFeed} />
           <Route path="/profile" component={profileContainer} />
         </Router>
-
     </div>
-
     )
   }
 })
