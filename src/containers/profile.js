@@ -15,11 +15,10 @@ var profileContainer = React.createClass({
     console.log(this.state);
   },
 
-  handleProfileSubmit(item){
-    console.log(item);
-    //event.preventDefault();
-    console.log('profile Submitted click', item),
-    this.setState(false)
+  handleProfileSubmit(formState, event){
+    console.log(formState);
+    event.preventDefault();
+    console.log('profile Submitted click');
   },
 
   render: function(){
