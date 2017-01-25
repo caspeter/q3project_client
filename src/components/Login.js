@@ -6,7 +6,8 @@ const LoginForm = React.createClass({
   render(){
 
     return(
-      <div className="row">
+      <div className="row center">
+        <h4>Sign In</h4>
         <form onSubmit={this.props.handleLoginSubmit}>
           {/* <RaisedButton label="Username" /> */}
           {/* <div className="col-l-6"> */}
@@ -16,11 +17,16 @@ const LoginForm = React.createClass({
             value={this.props.username}
             onChange={this.props.handleUsername}
             id="username"
-            className="addPadding"
+            className="marginRight"
           />
           {/* </div> */}
           {/* <div className="col-l-6"> */}
-          <TextField floatingLabelText="Password" type="text"  value={this.props.password} onChange={this.props.handlePassword}/>
+          <TextField
+            floatingLabelText="Password"
+            type="text"
+            value={this.props.password} onChange={this.props.handlePassword}
+            className="marginRight"
+          />
           {/* </div> */}
           <RaisedButton label="submit" type="submit" value="Login" id="submit" />
           {/* <input type="submit" value="Login" id="submit"/> */}

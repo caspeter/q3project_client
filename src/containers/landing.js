@@ -41,12 +41,24 @@ render: function(){
       handleUsername={this.handleUsername}
       handlePassword={this.handlePassword}
       handleLoginSubmit={this.handleLoginSubmit}
+      className="center"
     /> : null;
   return(
       <div>
         <Nav />
-        {login}
-        <img src="img/sketching.jpg" />
+        <div className="postsContainer">
+          {login}
+          <br />
+          <div>
+            Lorem ipsum dolor sit amet, senserit complectitur definitionem id his. Ea sit vivendum persequeris. Essent aeterno sit an, et vim dictas accusata philosophia, iudico impetus convenire ut mea. Ne noluisse lucilius sea, autem detracto conclusionemque nec an, posse antiopam at has. Te iudico discere tibique cum, quidam luptatum vim no, nec aeque nostrum cu. At nam aeterno senserit.
+          </div>
+          <br />
+          <div>
+            Idque iisque efficiendi in cum. Eos ad feugait efficiantur, sanctus nominavi argumentum eu pri. No scripta accusam philosophia quo, ne aeterno temporibus pri. Et ridens tritani moderatius sit, sanctus omnesque an pri, ea putant audire qui. Equidem partiendo no pri.
+          </div>
+          <br />
+          <img src="img/sketching.jpg" />
+        </div>
       </div>
   );
 
