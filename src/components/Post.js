@@ -87,8 +87,28 @@ const post = React.createClass({
         <CardText expandable={true}>
           <h3>Comments</h3>
           <div>
-            {
-            }
+            <Table>
+              <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+                <TableRow>
+                  <TableHeaderColumn>User</TableHeaderColumn>
+                  <TableHeaderColumn>Comment</TableHeaderColumn>
+                </TableRow>
+              </TableHeader>
+              <TableBody displayRowCheckbox={false}>
+                {
+                  this.state.comments.map((comment) => {
+                    return(
+                      <TableRow>
+                        <TableRowColumn>{comment.username}</TableRowColumn>
+                        <TableRowColumn>{comment.commentBody}</TableRowColumn>
+                      </TableRow>
+                    )
+                  })
+                }
+
+              </TableBody>
+            </Table>
+
           </div>
         </CardText>
       </Card>
