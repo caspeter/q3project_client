@@ -1,8 +1,24 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
+import {orange500, blue500} from 'material-ui/styles/colors';
+import Checkbox from 'material-ui/Checkbox';
+import RaisedButton from 'material-ui/RaisedButton';
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
 
 var CreatePost = React.createClass({
   propTypes: {
     value: React.PropTypes.object.isRequired
+  },
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
   },
 
   handleSubmit(event) {
@@ -14,12 +30,12 @@ var CreatePost = React.createClass({
       <form>
         <label>
           Title:
-          <input id="" type="text" name="postTitle"/>
+          <TextField id="" type="text" name="postTitle"/>
         </label>
         <div>
           <label>
             Description:
-            <textarea id="" type="text" name="postDescription"/>
+            <TextField multiLine={true} rows={1} rowsMax={5} id="" type="text" name="postDescription"/>
           </label>
         </div>
         <div>
@@ -27,7 +43,7 @@ var CreatePost = React.createClass({
           <div>
             <label>
               Zip Code:
-              <input />
+              <TextField id="" type="text" name="zipCode"/>
             </label>
           </div>
           </div>
@@ -36,20 +52,20 @@ var CreatePost = React.createClass({
           <div>
             <label>
               Budget
-              <input />
+              <TextField id="" type="text" name="budget"/>
             </label>
             <div>
               <label>
-                Skills Needed:<br></br>
-                <input type="checkbox" name="None" value="1"/>None<br></br>
-                <input type="checkbox" name="Painting" value="2"/>Painting<br></br>
-                <input type="checkbox" name="Drawing" value="3"/>Drawing<br></br>
-                <input type="checkbox" name="Sculpting" value="4"/>Sculpting<br></br>
+                <div className="col-lg-6">Skills Needed:</div>
+                <Checkbox label="None" type="checkbox" style={styles.checkbox} name="None" value="1"/>
+                <Checkbox label="Painting" type="checkbox" style={styles.checkbox} name="Painting" value="2"/>
+                <Checkbox label="Drawing" type="checkbox" style={styles.checkbox} name="Drawing" value="3"/>
+                <Checkbox label="Sculpting" type="checkbox" style={styles.checkbox} name="Sculpting" value="4"/>
               </label>
             </div>
           </div>
           </div>
-        <button type="submit" value="submit">Submit</button>
+        <RaisedButton type="submit" value="submit">Submit</RaisedButton>
       </form>
     )
   }
