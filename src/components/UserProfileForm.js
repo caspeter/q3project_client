@@ -2,6 +2,8 @@ import React from 'react';
 //import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 const ProfileForm = React.createClass({
@@ -22,45 +24,61 @@ const ProfileForm = React.createClass({
 
     console.log(this.state);
     return(
-      <div>
+      <div className="profileContainer">
         <form>
           <h3>Contact Information</h3>
-            <label>First Name: </label>
-            <input type="text" placeholder="firstname"
-             id="firstname"/>
-            <label>Last Name: </label>
-            <input type="text" placeholder="lastname"/>
-            <label> Phone Number: </label>
-            <input type="text" placeholder="888-888-8888"></input>
-            <label>Email Address: </label>
-            <input type="text" placeholder="email@email.com"></input>
+
+          <div className="row">
+            <div className="col-md-5">
+              <TextField type="text"
+                id="firstname" floatingLabelText="First Name"/>
+            </div>
+            <div className="col-sm-offset-2 col-md-5">
+              <TextField type="text" floatingLabelText="Last Name"/>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-5">
+              <TextField type="text" floatingLabelText="Phone Number"/>
+            </div>
+            <div className="col-sm-offset-2 col-md-5">
+              <TextField type="text" floatingLabelText="Email Address"/>
+            </div>
+          </div>
           <h3>Your Location</h3>
-            <label>City: </label>
-            <input type="text" placeholder="City Name"></input>
-            <label>State: </label>
-            <input type="text" placeholder="CO"></input>
-            <label>Zip Code: </label>
-            <input type="text" placeholder="88888"></input>
+            <div className="row">
+              <div className="col-md-5">
+                <TextField type="text" floatingLabelText="City"/>
+              </div>
+              <div className="col-sm-offset-2 col-md-5">
+                <TextField type="text" floatingLabelText="State"/>
+              </div>
+              <div className="row">
+                <div className="col-md-5">
+                  <TextField type="text" floatingLabelText="Zip"/>
+                </div>
+              </div>
+            </div>
           <h3>About</h3>
+          <label>Select a Skill: </label>
+          <br></br>
             <SelectField
-            floatingLabelText="Frequency"
+            floatingLabelText="Skill"
             value={this.state.value}
             onChange={this.handleChange}
-          >
-            <MenuItem value={1} primaryText="Never" />
-            <MenuItem value={2} primaryText="Every Night" />
-            <MenuItem value={3} primaryText="Weeknights" />
-            <MenuItem value={4} primaryText="Weekends" />
-            <MenuItem value={5} primaryText="Weekly" />
-          </SelectField>
+            >
+              <MenuItem value={'painting'} primaryText="Painting" />
+              <MenuItem value={'drawing'} primaryText="Drawing" />
+              <MenuItem value={'sculpting'} primaryText="Sculpting" />
+              <MenuItem value={'none'} primaryText="None" />
+            </SelectField>
+            <br></br>
+            <TextField type="text" floatingLabelText="Profile URL"/>
+            <TextField type="text" floatingLabelText="Personal Website"/>
+            <TextField type="text" floatingLabelText="Bio"/>
 
-            <label>Profile URL:</label>
-            <input type="text"></input>
-            <label>Website Link:</label>
-            <input type="text"></input>
-            <label>BIO:</label>
-            <input type="text"></input>
-            <button type="submit">Submit</button>
+            <RaisedButton type="submit" label="Submit"/>
         </form>
       </div>
     );
