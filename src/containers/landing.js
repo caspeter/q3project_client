@@ -2,9 +2,6 @@ import React from 'react';
 import request from 'superagent';
 import LoginForm from '../components/Login.js';
 import Nav from '../components/Nav.js';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-
 
 var landingContainer = React.createClass({
 
@@ -41,7 +38,6 @@ render: function(){
       handleUsername={this.handleUsername}
       handlePassword={this.handlePassword}
       handleLoginSubmit={this.handleLoginSubmit}
-      className="center"
     /> : null;
   return(
       <div>
