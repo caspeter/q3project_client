@@ -14,10 +14,10 @@ const ProfileForm = React.createClass({
     });
   },
 
-  // handleChange(event, index, value){
-  //   console.log(this.state);
-  //   this.setState({value});
-  // },
+  handleChange(event, index, value){
+    console.log(this.state);
+    this.setState({value});
+  },
 
   setValue: function (field, event) {
     //If the input fields were directly within this
@@ -26,7 +26,6 @@ const ProfileForm = React.createClass({
     var object = {};
     object[field] = event.target.value;
     this.setState(object);
-    console.log(this.state);
   },
 
   render: function(){
@@ -77,14 +76,17 @@ const ProfileForm = React.createClass({
           <h3>About</h3>
           <br></br>
 
-            <div className="row">
-              <div className="col-md-5">
-                <TextField type="text" floatingLabelText="skills" value={this.state.skills} onChange={this.setValue.bind(this, 'skills')}/>
-              </div>
-              <div className="col-sm-offset-2 col-md-5">
-              </div>
-            </div>
 
+            <SelectField
+              floatingLabelText="Skill"
+              value={this.state.value}
+              onChange={this.handleChange}
+             >
+              <MenuItem value={'painting'} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
+              <MenuItem value={1} primaryText="Drawing" />
+              <MenuItem value={2} primaryText="Sculpting" />
+              <MenuItem value={3} primaryText="None" />
+           </SelectField>
 
 
             <br></br>

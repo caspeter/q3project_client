@@ -12,7 +12,6 @@ var profileContainer = React.createClass({
   },
 
   componentDidMount(){
-    console.log(this.state);
   },
 
   handleProfileSubmit(formState, event){
@@ -35,11 +34,13 @@ var profileContainer = React.createClass({
 
   },
 
+
   render: function(){
     var profileForm = (true) ?
     <ProfileForm
       handleProfileSubmit={this.handleProfileSubmit}
       /> : null
+
     return(
       <div>
         {profileForm}
