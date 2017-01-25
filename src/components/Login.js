@@ -32,7 +32,6 @@ const LoginForm = React.createClass({
           {/* <input type="submit" value="Login" id="submit"/> */}
         </form>
       </div>
->>>>>>> 5ee3863886dac8589be19496dfb055bbb47e6151
     );
   }
 });
