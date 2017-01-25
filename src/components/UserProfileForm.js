@@ -25,25 +25,25 @@ const ProfileForm = React.createClass({
     console.log(this.state);
     return(
       <div className="profileContainer">
-        <form>
+        <form onSubmit={this.props.handleProfileSubmit}>
           <h3>Contact Information</h3>
 
           <div className="row">
             <div className="col-md-5">
               <TextField type="text"
-                id="firstname" floatingLabelText="First Name"/>
+                id="firstname" floatingLabelText="First Name" value={this.props.firstname}/>
             </div>
             <div className="col-sm-offset-2 col-md-5">
-              <TextField type="text" floatingLabelText="Last Name"/>
+              <TextField type="text" floatingLabelText="Last Name" value={this.props.lastname}/>
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-5">
-              <TextField type="text" floatingLabelText="Phone Number"/>
+              <TextField type="text" floatingLabelText="Phone Number" value={this.props.phoneNumber}/>
             </div>
             <div className="col-sm-offset-2 col-md-5">
-              <TextField type="text" floatingLabelText="Email Address"/>
+              <TextField type="text" floatingLabelText="Email Address" value={this.props.email}/>
             </div>
           </div>
 
@@ -51,15 +51,15 @@ const ProfileForm = React.createClass({
 
             <div className="row">
               <div className="col-md-5">
-                <TextField type="text" floatingLabelText="City"/>
+                <TextField type="text" floatingLabelText="City" value={this.props.city}/>
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="State"/>
+                <TextField type="text" floatingLabelText="State"value={this.props.state}/>
               </div>
             </div>
               <div className="row">
                 <div className="col-md-5">
-                  <TextField type="text" floatingLabelText="Zip"/>
+                  <TextField type="text" floatingLabelText="Zip" value={this.props.zip}/>
                 </div>
                 <div className="col-sm-offset-2 col-md-5">
                 </div>
@@ -79,21 +79,21 @@ const ProfileForm = React.createClass({
             <br></br>
               <div className="row">
                 <div className="col-md-5">
-                  <TextField type="text" floatingLabelText="Profile URL"/>
+                  <TextField type="text" floatingLabelText="Profile URL" value={this.props.profileURL}/>
                 </div>
                 <div className="col-sm-offset-2 col-md-5">
-                  <TextField type="text" floatingLabelText="Personal Website"/>
+                  <TextField type="text" floatingLabelText="Personal Website" value={this.props.personalWebsite}/>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-5">
-                  <TextField type="text" floatingLabelText="Bio"/>
+                  <TextField type="text" floatingLabelText="Bio" value={this.props.bio}/>
                 </div>
               </div>
               <br></br>
               <div className="row">
                 <div className="col-sm-12 profileSubmitButton">
-                  <RaisedButton type="submit" label="Submit"/>
+                  <RaisedButton type="submit" label="Submit" />
                 </div>
             </div>
         </form>
