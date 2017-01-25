@@ -24,3 +24,7 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+
+.profileSubmitButton{
+  text-align: center;
+}

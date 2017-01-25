@@ -46,7 +46,9 @@ const ProfileForm = React.createClass({
               <TextField type="text" floatingLabelText="Email Address"/>
             </div>
           </div>
+
           <h3>Your Location</h3>
+
             <div className="row">
               <div className="col-md-5">
                 <TextField type="text" floatingLabelText="City"/>
@@ -54,14 +56,15 @@ const ProfileForm = React.createClass({
               <div className="col-sm-offset-2 col-md-5">
                 <TextField type="text" floatingLabelText="State"/>
               </div>
+            </div>
               <div className="row">
                 <div className="col-md-5">
                   <TextField type="text" floatingLabelText="Zip"/>
                 </div>
+                <div className="col-sm-offset-2 col-md-5">
+                </div>
               </div>
-            </div>
           <h3>About</h3>
-          <label>Select a Skill: </label>
           <br></br>
             <SelectField
             floatingLabelText="Skill"
@@ -74,11 +77,25 @@ const ProfileForm = React.createClass({
               <MenuItem value={'none'} primaryText="None" />
             </SelectField>
             <br></br>
-            <TextField type="text" floatingLabelText="Profile URL"/>
-            <TextField type="text" floatingLabelText="Personal Website"/>
-            <TextField type="text" floatingLabelText="Bio"/>
-
-            <RaisedButton type="submit" label="Submit"/>
+              <div className="row">
+                <div className="col-md-5">
+                  <TextField type="text" floatingLabelText="Profile URL"/>
+                </div>
+                <div className="col-sm-offset-2 col-md-5">
+                  <TextField type="text" floatingLabelText="Personal Website"/>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-5">
+                  <TextField type="text" floatingLabelText="Bio"/>
+                </div>
+              </div>
+              <br></br>
+              <div className="row">
+                <div className="col-sm-12 profileSubmitButton">
+                  <RaisedButton type="submit" label="Submit"/>
+                </div>
+            </div>
         </form>
       </div>
     );
