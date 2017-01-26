@@ -71,7 +71,7 @@ const ProfileForm = React.createClass({
                   id="username" floatingLabelText="Username" disabled={this.props.disabled} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')}  />
+                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled} />
               </div>
             </div>
 
@@ -91,7 +91,7 @@ const ProfileForm = React.createClass({
                 <TextField type="number" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} />
+                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} disabled={this.props.disabled}/>
               </div>
             </div>
               <div className="row">

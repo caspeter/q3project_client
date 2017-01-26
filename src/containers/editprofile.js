@@ -20,7 +20,7 @@ var editProfileContainer = React.createClass({
 
   getUserProfile(){
     request
-      .get(DATABASE_URL + '/api/users/1')
+      .get(DATABASE_URL + '/api/users/2')
       .end((err, res) => {
         if(err){
           console.log("error getting user info")
@@ -36,14 +36,14 @@ var editProfileContainer = React.createClass({
 
   handleProfileSubmit(formState, event){
     console.log(formState);
-    event.preventDefault();
 
     request
-      .post('http://localhost:5000/api/users/')
+      .patch('http://localhost:5000/api/users/1')
       .send(formState)
       .end(function(err, res){
         if (err || !res.ok){
-          alert("error posting new user profile");
+          alert("error updating user");
+          console.log(err);
         } else {
           console.log(res.body);
           browserHistory.push('/feed')
