@@ -40,7 +40,7 @@ const ProfileForm = React.createClass({
       <Card className="uiCard">
         <div className="profileContainer">
           <h3>Please Enter Your Information</h3>
-          <form onSubmit={this.props.handleProfileSubmit.bind(null, this.state)}>
+          <form onSubmit={this.props.onProfileSubmit.bind(null, this.state)}>
 
             <div className="row">
               <div className="col-md-5">
