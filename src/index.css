@@ -70,6 +70,10 @@ nav:hover{
 
 .uiCard {
   margin: 20px;
+  transition: .5s
+}
+.uiCard:hover {
+  box-shadow: 0 0 10px 0 rgba(144, 193, 92, 0.8) !important;
 }
 
 .cardBody {
