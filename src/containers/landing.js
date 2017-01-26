@@ -34,12 +34,24 @@ var landingContainer = React.createClass({
 
     handleLoginSubmit(event){
       event.preventDefault();
-      sessionStorage.setItem('username', this.state.username );
-      browserHistory.push('/feed');
-    },
+      request
+      .get('http://localhost:5000/api/users/username/' + this.state.username)
+        .end(function(err, res){
+          if(err){
+            console.log('error getting username');
+          }
+          else{
+          console.log(res)
+          sessionStorage.setItem('id', res.body.id);
+          browserHistory.push('/feed');
 
+          }
+        });
+    },
     handleLogoutSubmit(event){
-      sessionStorage.removeItem('username', this.state.username );
+      alert('hi');
+      event.preventDefault();
+      sessionStorage.removeItem('id');
       browserHistory.push('/');
     },
 
@@ -54,8 +66,11 @@ var landingContainer = React.createClass({
         /> : null;
 
 
-      const isLogged = (sessionStorage.username) ?
-        <Nav /> : <Nav1 />
+      const isLogged = (sessionStorage.id) ?
+        <Nav
+          handleLogoutSubmit={this.handleLogoutSubmit} />
+          :
+        <Nav1 />
 
       return(
         <div>
