@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import {orange500, blue500} from 'material-ui/styles/colors';
+import {grey100, grey900} from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
@@ -34,39 +34,46 @@ var CreatePost = React.createClass({
   },
 
   handleSubmit(event) {
+    alert('A form was submitted: ' + this.state.value);
+    console.log(this.state.value);
     event.preventDefault();
   },
 
   render: function () {
     return (
-      <Card className="newPostCard">
-      <CardText>
-      <form>
-        <label>
-          Title:
-          <TextField id="" type="text" name="postTitle"/>
-        </label>
-        <div>
+      <Card className="uiCard">
+      <div className="newPostContainer">
+      <form onSubmit={this.state.value}>
+        <h3>Create A New Post</h3>
+        <div className="row newPostPadding">
           <label>
-            Description:
-            <TextField multiLine={true} rows={1} rowsMax={5} id="" type="text" name="postDescription"/>
+            Title:
+            <TextField id="" type="text" name="postTitle" value={this.state.title} onChange={this.handleChange} required/>
           </label>
         </div>
-        <div>
+        <div className="row">
+        <div className="newPostPadding col-md-4">
+          <label>
+            Description:
+            <TextField multiLine={true} rows={1} rowsMax={5} id="" type="text" name="postDescription" onChange={this.handleChange} required/>
+          </label>
+        </div>
+        </div>
+        <div className="newPostPadding">
           Project Location:
           <div>
             <label>
               Zip Code:
-              <TextField id="" type="text" name="zipCode"/>
+              <TextField id="" type="text" name="zipCode" onChange={this.handleChange} required/>
             </label>
           </div>
           </div>
-        <div>
+        <div className="newPostPadding">
           Project Information:
           <div>
             <label>
               Budget
-              <TextField id="" type="text" name="budget"/>
+              <TextField id="" type="text" name="budget" onChange={this.handleChange} required/>
             </label>
             <div>
               <label>
@@ -79,9 +86,9 @@ var CreatePost = React.createClass({
             </div>
           </div>
           </div>
-        <RaisedButton type="submit" value="submit">Submit</RaisedButton>
+        <RaisedButton className="postSubmitButton" backgroundColor="#90C15B" type="submit" value="submit">Submit</RaisedButton>
       </form>
-      </CardText>
+      </div>
       </Card>
     )
   }
