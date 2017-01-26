@@ -54,6 +54,7 @@ const LoginForm = React.createClass({
             href="/feed"
             onTouchTap={this.handleTouchTap}
             onClick={this.handleClick}
+            backgroundColor="#90C15B"
           />
           {/* <input type="submit" value="Login" id="submit"/> */}
         </form>

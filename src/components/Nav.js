@@ -19,21 +19,21 @@ const Nav = React.createClass({
           className="navButton"
              href="/"
              label="Home"
-             primary={true}
+             backgroundColor="#90C15B"
            />
            { " " }
           <RaisedButton
           className="navButton"
              href="/myProfile"
              label="My Profile"
-             primary={true}
+             backgroundColor="#90C15B"
            />
            { " " }
           <RaisedButton
           className="navButton"
              href="/myProjects"
              label="My Projects"
-             primary={true}
+             backgroundColor="#90C15B"
            />
            { " " }
 
@@ -42,7 +42,7 @@ const Nav = React.createClass({
              onClick={this.props.handleLogoutSubmit}
              href="/"
              label="Logout"
-             primary={true}
+             backgroundColor="#90C15B"
            />
        </div>
      </nav>

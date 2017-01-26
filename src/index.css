@@ -29,14 +29,10 @@ nav {
   z-index: 10;
   height: 75px;
   background-color: #545A5E;
-  border-bottom: 5px solid #BBBFC1;
-  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.25);
   padding: 16px 10px 0 10px;
   transition: .5s;
-}
-
-nav:hover{
-  border-bottom: 5px solid #90C15B;
+  border-bottom: 5px solid rgba(144, 193, 91, .95);
 }
 
 .navWrapper {
