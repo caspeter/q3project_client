@@ -4,6 +4,8 @@ import ProfileForm from '../components/UserProfileForm.js';
 import { Router, browserHistory } from 'react-router'
 import routes from '../router'
 
+var DATABASE_URL = 'http://localhost:5000';
+
 var profileContainer = React.createClass({
 
   getInitialState(){
@@ -16,12 +18,11 @@ var profileContainer = React.createClass({
   componentDidMount(){
   },
 
-  handleProfileSubmit(formState, event){
+  handleProfileSubmit(formState){
     console.log(formState);
-    event.preventDefault();
 
     request
-      .post('http://localhost:5000/api/users/')
+      .post(DATABASE_URL + '/api/users/')
       .send(formState)
       .end(function(err, res){
         if (err || !res.ok){
@@ -38,14 +39,14 @@ var profileContainer = React.createClass({
   render: function(){
     var profileForm = (true) ?
     <ProfileForm
-      handleProfileSubmit={this.handleProfileSubmit}
+      onProfileSubmit={this.handleProfileSubmit}
+      disabled={false}
       /> : null
 
     return(
       <div>
         {profileForm}
-
-      </div>
+    </div>
     )
   }
 });
