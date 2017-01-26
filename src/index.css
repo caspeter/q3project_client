@@ -73,11 +73,13 @@ nav:hover{
   transition: .5s
 }
 .uiCard:hover {
-  box-shadow: 0 0 10px 0 rgba(144, 193, 92, 0.8) !important;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4) !important;
 }
 
 .cardBody {
-  padding-top: 0px !important;
+  /*padding-top: 0px !important;*/
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 10px 10px 10px;
 }
 
 
