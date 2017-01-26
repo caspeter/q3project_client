@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, browserHistory, location } from 'react-router'
 //import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
@@ -19,13 +20,27 @@ const ProfileForm = React.createClass({
     console.log(this.props, "props at initial state");
     return ({
       skills:[1],
+      //disabled: ''
     });
   },
 
+  componentDidMount(){
+    //this.disableFields();
+    console.log(this.props.disabled);
+  },
 
   componentWillReceiveProps(nextProps) {
-    console.log('I Can Haz Props');
     this.setState({...nextProps.profileData});
+    this.setState(nextProps.disabled);
+  },
+
+  disableFields(){
+    var location = browserHistory.getCurrentLocation();
+    console.log(location, this.state);
+    if (location === "/myProfile"){
+      this.setState({disabled:true});
+      console.log(location, this.state);
+    }
   },
 
   handleSubmit(e) {
@@ -53,7 +68,7 @@ const ProfileForm = React.createClass({
             <div className="row">
               <div className="col-md-5">
                 <TextField type="text" value={this.state.username} onChange={this.setValue.bind(this, 'username')}
-                  id="username" floatingLabelText="Username"  />
+                  id="username" floatingLabelText="Username" disabled={this.props.disabled} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
                 <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')}  />
@@ -93,7 +108,7 @@ const ProfileForm = React.createClass({
                 floatingLabelText="Skill"
                 value={this.state.value}
                 onChange={this.handleChange}
-
+                disabled={this.props.disabled}
                >
                 <MenuItem value={0} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
                 <MenuItem value={1} primaryText="Drawing" onChange={this.setValue.bind(this, 'skill')}/>

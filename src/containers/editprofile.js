@@ -10,7 +10,7 @@ var editProfileContainer = React.createClass({
 
   getInitialState(){
     return ({
-      profileData: {}
+      profileData: {},
     });
   },
 
@@ -58,6 +58,7 @@ var editProfileContainer = React.createClass({
     <ProfileForm
       profileData={this.state.profileData}
       onProfileSubmit={this.handleProfileSubmit}
+      disabled={true}
       /> : null;
 
     return(

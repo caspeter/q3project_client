@@ -38,6 +38,7 @@ var profileContainer = React.createClass({
     var profileForm = (true) ?
     <ProfileForm
       onProfileSubmit={this.handleProfileSubmit}
+      disabled={false}
       /> : null
 
     return(
