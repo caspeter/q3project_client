@@ -1,6 +1,8 @@
 import React from 'react';
 import request from 'superagent';
 import ProfileForm from '../components/UserProfileForm.js';
+import { Router, browserHistory } from 'react-router'
+import routes from '../router'
 
 var profileContainer = React.createClass({
 
@@ -29,6 +31,7 @@ var profileContainer = React.createClass({
         } else {
           console.log(res.body);
           alert('new user posted' + JSON.stringify(res.body));
+          browserHistory.push('/feed')
         }
       });
 
