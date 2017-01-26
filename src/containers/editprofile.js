@@ -4,17 +4,36 @@ import ProfileForm from '../components/UserProfileForm.js';
 import { Router, browserHistory } from 'react-router'
 import routes from '../router'
 
-var profileContainer = React.createClass({
+const DATABASE_URL = "http://localhost:5000";
+
+var editProfileContainer = React.createClass({
 
   getInitialState(){
     return ({
-      username: '',
-      password: ''
+      //profileData={};
     });
   },
 
   componentDidMount(){
+    this.getUserProfile();
   },
+
+  getUserProfile(){
+    request
+      .get(DATABASE_URL + '/api/users/1')
+      .end((err, res) => {
+        if(err){
+          console.log("error getting user info")
+        } else {
+
+          console.log(res.body);
+          this.setState(res.body);
+          console.log(this.state);
+        }
+      })
+  },
+
+
 
   handleProfileSubmit(formState, event){
     console.log(formState);
@@ -38,6 +57,7 @@ var profileContainer = React.createClass({
   render: function(){
     var profileForm = (true) ?
     <ProfileForm
+
       onProfileSubmit={this.handleProfileSubmit}
       /> : null
 
@@ -50,4 +70,4 @@ var profileContainer = React.createClass({
   }
 });
 
-export default profileContainer;
+export default editProfileContainer;

@@ -16,9 +16,8 @@ var profileContainer = React.createClass({
   componentDidMount(){
   },
 
-  handleProfileSubmit(formState, event){
+  handleProfileSubmit(formState){
     console.log(formState);
-    event.preventDefault();
 
     request
       .post('http://localhost:5000/api/users/')
