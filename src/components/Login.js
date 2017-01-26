@@ -2,6 +2,22 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import {orange500, blue500} from 'material-ui/styles/colors';
+
+const styles = {
+  errorStyle: {
+    color: "#90C15B",
+  },
+  underlineStyle: {
+    borderColor: "#90C15B",
+  },
+  floatingLabelStyle: {
+    color: "#90C15B",
+  },
+  floatingLabelFocusStyle: {
+    color: "#90C15B",
+  },
+};
 
 const LoginForm = React.createClass({
   render(){
@@ -20,6 +36,8 @@ const LoginForm = React.createClass({
             onChange={this.props.handleUsername}
             id="username"
             className="marginRight"
+            underlineFocusStyle={styles.underlineStyle}
+      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           />
           {/* </div> */}
           {/* <div className="col-l-6"> */}
@@ -28,6 +46,8 @@ const LoginForm = React.createClass({
             type="text"
             value={this.props.password} onChange={this.props.handlePassword}
             className="marginRight"
+            underlineFocusStyle={styles.underlineStyle}
+      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           />
           {/* </div> */}
           <RaisedButton label="submit" type="submit" value="Login" id="submit"
