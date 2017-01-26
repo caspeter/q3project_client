@@ -70,3 +70,8 @@ img{
 .profileSubmitButton{
   text-align: center;
 }
+
+.newPostCard {
+  display: flex;
+  align-items: center;
+}

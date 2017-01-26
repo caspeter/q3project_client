@@ -39,7 +39,7 @@ var CreatePost = React.createClass({
 
   render: function () {
     return (
-      <Card>
+      <Card className="newPostCard">
       <CardText>
       <form>
         <label>
