@@ -23,26 +23,20 @@ var CreatePost = React.createClass({
     })
   },
 
-  propTypes: {
-    value: React.PropTypes.object.isRequired
-  },
+  // getSkills(){
+  //   request
+  //   .get(DATABASE_URL + '/api/skills')
+  //   .end((err, res)=>{
+  //     if (err || !res.ok){
+  //       alert("ERROR with skills");
+  //     } else {
+  //       this.setState({skills: res.body});
+  //       console.log(this.state.skills);
+  //     };
+  //   });
+  // },
 
-  getSkills(){
-    request
-    .get(DATABASE_URL + '/api/skills')
-    .end((err, res)=>{
-      if (err || !res.ok){
-        alert("ERROR with skills");
-      } else {
-        this.setState({skills: res.body});
-        console.log(this.state.skills);
-      };
-    });
-  },
-
-  componentDidMount() {
-    this.getSkills();
-  },
+  // ONCHANGE HANDLERS -----------------------
 
   titleHandleChange(event) {
     this.setState({title: event.target.value})
@@ -65,14 +59,17 @@ var CreatePost = React.createClass({
   },
 
   skillsHandleChange(event) {
-    console.log(event.target.value);
     console.log('hi');
+    console.log(event.target.value);
   },
 
   handleSubmit(event) {
+    event.preventDefault();
+    for (const checkbox of this.selectedCheckboxes) {
+      console.log(checkbox, 'is selected.');
+    }
     alert('A form was submitted: ' + this.state.value);
     console.log(this.state.value);
-    event.preventDefault();
   },
 
   render: function () {
@@ -121,7 +118,8 @@ var CreatePost = React.createClass({
                     name="zipCode"
                     value={this.state.zipCode}
                     onChange={this.zipCodeHandleChange}
-                    required/>
+                    required
+                  />
                 </label>
               </div>
             </div>
@@ -149,7 +147,7 @@ var CreatePost = React.createClass({
                       style={styles.checkbox}
                       name="None"
                       value="1"
-                      onChange={this.skillsHandleChange}
+                      onCheck={this.skillsHandleChange}
                     />
                     <Checkbox
                       label="Painting"
@@ -157,7 +155,7 @@ var CreatePost = React.createClass({
                       style={styles.checkbox}
                       name="Painting"
                       value="2"
-                      onChange={this.skillsHandleChange}
+                      onCheck={this.skillsHandleChange}
                     />
                     <Checkbox
                       label="Drawing"
@@ -165,7 +163,7 @@ var CreatePost = React.createClass({
                       style={styles.checkbox}
                       name="Drawing"
                       value="3"
-                      onChange={this.skillsHandleChange}
+                      onCheck={this.skillsHandleChange}
                     />
                     <Checkbox
                       label="Sculpting"
@@ -173,13 +171,17 @@ var CreatePost = React.createClass({
                       style={styles.checkbox}
                       name="Sculpting"
                       value="4"
-                      onChange={this.skillsHandleChange}
+                      onCheck={this.skillsHandleChange}
                     />
                   </label>
                 </div>
               </div>
             </div>
-            <RaisedButton className="postSubmitButton" backgroundColor="#90C15B" type="submit" value="submit">Submit</RaisedButton>
+            <RaisedButton
+              className="postSubmitButton"
+              backgroundColor="#90C15B"
+              type="submit"
+              value="submit">Submit</RaisedButton>
       </form>
       </div>
       </Card>
