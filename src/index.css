@@ -103,10 +103,34 @@ img{
 
 .profileSubmitButton{
   text-align: center;
+  padding-bottom: 15px;
+}
+
+.newPostCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.newPostPadding {
+  display: flex;
+  padding-left: 15px;
 }
 
 h3{
   color: #545A5E;
   text-align: center;
   padding-top: 15px;
+}
+
+.postSubmitButton {
+  margin: 12;
+  backgroundColor: #90C15B;
+}
+
+.newPostContainer {
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
