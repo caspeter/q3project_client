@@ -43,8 +43,7 @@ var profileContainer = React.createClass({
     return(
       <div>
         {profileForm}
-
-      </div>
+    </div>
     )
   }
 });

@@ -10,7 +10,7 @@ var editProfileContainer = React.createClass({
 
   getInitialState(){
     return ({
-      //profileData={};
+      profileData: {}
     });
   },
 
@@ -25,14 +25,13 @@ var editProfileContainer = React.createClass({
         if(err){
           console.log("error getting user info")
         } else {
+          this.setState({profileData: res.body});
 
-          console.log(res.body);
-          this.setState(res.body);
-          console.log(this.state);
+          console.log(this.state, "state of container after get data");
+          this.render();
         }
-      })
+      });
   },
-
 
 
   handleProfileSubmit(formState, event){
@@ -55,16 +54,15 @@ var editProfileContainer = React.createClass({
 
 
   render: function(){
-    var profileForm = (true) ?
+    var profileForm = this.state.profileDataLoaded = (true) ?
     <ProfileForm
-
+      profileData={this.state.profileData}
       onProfileSubmit={this.handleProfileSubmit}
-      /> : null
+      /> : null;
 
     return(
       <div>
         {profileForm}
-
       </div>
     )
   }

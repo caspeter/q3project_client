@@ -16,36 +16,26 @@ import Avatar from 'material-ui/Avatar/Avatar';
 const ProfileForm = React.createClass({
 
   getInitialState(){
+    console.log(this.props, "props at initial state");
     return ({
       skills:[1],
-      username: this.props.username,
-      password: this.props.password,
-      firstName: this.props.firstName,
-      lastName: this.props.lastName,
-      phoneNumber: this.props.phoneNumber,
-      email: this.props.email,
-      zipCode: this.props.zipCode,
-      profileUrl: this.props.profileUrl,
-      website: this.props.website,
-      userBio: this.props.userBio,
     });
+  },
+
+
+  componentWillReceiveProps(nextProps) {
+    console.log('I Can Haz Props');
+    this.setState({...nextProps.profileData});
   },
 
   handleSubmit(e) {
     console.log('handleSubmit');
     e.preventDefault();
 
-    var formData = {
-      username: this.state.username,
-    };
+    var formData = {...this.state};
 
     this.props.onProfileSubmit(formData);
   },
-
-  handleUsernameChange(e){
-    this.setState({username: e.target.value});
-    console.log(this.state);
-  }, // TODO: Make a whole bunch more of these
 
   setValue: function (field, event) {
     var object = {};
@@ -62,7 +52,7 @@ const ProfileForm = React.createClass({
 
             <div className="row">
               <div className="col-md-5">
-                <TextField type="text" value={this.state.username} onChange={this.handleUsernameChange}
+                <TextField type="text" value={this.state.username} onChange={this.setValue.bind(this, 'username')}
                   id="username" floatingLabelText="Username"  />
               </div>
               <div className="col-sm-offset-2 col-md-5">
