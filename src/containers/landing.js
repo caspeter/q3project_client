@@ -27,6 +27,8 @@ var landingContainer = React.createClass({
     },
 
     handleLoginSubmit(event){
+      console.log('hi');
+      
       event.preventDefault();
       sessionStorage.setItem( 'username', this.state.username );
     //  console.log(sessionStorage.username);
@@ -65,17 +67,14 @@ render: function(){
 
 
   return(
-<<<<<<< HEAD
 
-    <div>
 
-      {isLogged}
-      {login}
-    </div>
-=======
+
+
       <div>
         <Nav />
         <div className="postsContainer">
+        {isLogged}
           {login}
           <br />
           <div>
@@ -89,7 +88,7 @@ render: function(){
           <img src="img/sketching.jpg" />
         </div>
       </div>
->>>>>>> 5ee3863886dac8589be19496dfb055bbb47e6151
+
   );
 
   }

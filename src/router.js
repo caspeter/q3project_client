@@ -19,6 +19,7 @@ var AppRouter = React.createClass({
         <Router history={browserHistory}>
           <Route path="/" component={landingContainer} />
           <Route path="/feed" component={postsFeed} />
+          <Route path="/feed" component={Nav} />
         </Router>
       </div>
     )
