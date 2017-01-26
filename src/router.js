@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 
@@ -5,8 +6,11 @@ import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 //import containers:
 import landingContainer from './containers/landing.js';
 import postsFeed from './containers/feed';
-import profileContainer from './containers/profile.js';
 import editProfileContainer from './containers/editprofile.js';
+import Nav from './components/Nav.js';
+import Nav1 from './components/Navlogin.js';
+import profileContainer from './containers/profile.js'
+
 //import components:
 
 
