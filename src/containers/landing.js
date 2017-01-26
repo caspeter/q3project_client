@@ -1,9 +1,11 @@
+/* eslint-disable */
 'use strict';
 import React from 'react';
 import request from 'superagent';
 import LoginForm from '../components/Login.js';
 import Nav from '../components/Nav.js';
 import Nav1 from '../components/Navlogin.js';
+import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 
 var landingContainer = React.createClass({
 
@@ -28,10 +30,18 @@ var landingContainer = React.createClass({
 
     handleLoginSubmit(event){
       console.log('hi');
-      
       event.preventDefault();
       sessionStorage.setItem( 'username', this.state.username );
+      this.props.history.push('./feed');
     //  console.log(sessionStorage.username);
+    },
+
+    handleClick: function(e) {
+    console.log("click", e);
+    },
+
+    handleTouchTap: function(e) {
+    console.log("touchTap", e);
     },
 
     handleLogoutSubmit(event){
@@ -72,8 +82,9 @@ render: function(){
 
 
       <div>
-        <Nav />
+
         <div className="postsContainer">
+
         {isLogged}
           {login}
           <br />
