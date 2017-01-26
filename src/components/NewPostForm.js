@@ -6,22 +6,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
-};
+
+import request from 'superagent';
+
+var DATABASE_URL = 'http://localhost:5000';
+
 
 var CreatePost = React.createClass({
   getInitialState () {
     return({
-      comments: [],
-      skills: [],
-      expanded: false,
-      addCommentText: ''
+      title: '',
+      description: '',
+      zipCode: '',
+      budget: '',
+      skills: []
     })
   },
 
@@ -29,8 +27,46 @@ var CreatePost = React.createClass({
     value: React.PropTypes.object.isRequired
   },
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  getSkills(){
+    request
+    .get(DATABASE_URL + '/api/skills')
+    .end((err, res)=>{
+      if (err || !res.ok){
+        alert("ERROR with skills");
+      } else {
+        this.setState({skills: res.body});
+        console.log(this.state.skills);
+      };
+    });
+  },
+
+  componentDidMount() {
+    this.getSkills();
+  },
+
+  titleHandleChange(event) {
+    this.setState({title: event.target.value})
+    // console.log(this.state);
+  },
+
+  descriptionHandleChange(event) {
+    this.setState({description: event.target.value})
+    console.log(this.state);
+  },
+
+  zipCodeHandleChange(event) {
+    this.setState({zipCode: event.target.value})
+    console.log(this.state);
+  },
+
+  budgetHandleChange(event) {
+    this.setState({budget: event.target.value})
+    console.log(this.state);
+  },
+
+  skillsHandleChange(event) {
+    console.log(event.target.value);
+    console.log('hi');
   },
 
   handleSubmit(event) {
@@ -42,56 +78,122 @@ var CreatePost = React.createClass({
   render: function () {
     return (
       <Card className="uiCard">
-      <div className="newPostContainer">
-      <form onSubmit={this.state.value}>
-        <h3>Create A New Post</h3>
-        <div className="row newPostPadding">
-          <label>
-            Title:
-            <TextField id="" type="text" name="postTitle" value={this.state.title} onChange={this.handleChange} required/>
-          </label>
-        </div>
-        <div className="row">
-        <div className="newPostPadding col-md-4">
-          <label>
-            Description:
-            <TextField multiLine={true} rows={1} rowsMax={5} id="" type="text" name="postDescription" onChange={this.handleChange} required/>
-          </label>
-        </div>
-        </div>
-        <div className="newPostPadding">
-          Project Location:
-          <div>
-            <label>
-              Zip Code:
-              <TextField id="" type="text" name="zipCode" onChange={this.handleChange} required/>
-            </label>
-          </div>
-          </div>
-        <div className="newPostPadding">
-          Project Information:
-          <div>
-            <label>
-              Budget
-              <TextField id="" type="text" name="budget" onChange={this.handleChange} required/>
-            </label>
-            <div>
+        <div className="newPostContainer">
+          <form onSubmit={this.state.value}>
+            <h3>Create A New Post</h3>
+            <div className="row newPostPadding">
               <label>
-                <div className="col-lg-6">Skills Needed:</div>
-                <Checkbox label="None" type="checkbox" style={styles.checkbox} name="None" value="1"/>
-                <Checkbox label="Painting" type="checkbox" style={styles.checkbox} name="Painting" value="2"/>
-                <Checkbox label="Drawing" type="checkbox" style={styles.checkbox} name="Drawing" value="3"/>
-                <Checkbox label="Sculpting" type="checkbox" style={styles.checkbox} name="Sculpting" value="4"/>
+                Title:
+                <TextField
+                  id="newPostTitle"
+                  type="text"
+                  name="postTitle"
+                  value={this.state.title}
+                  onChange={this.titleHandleChange}
+                  required
+                />
               </label>
             </div>
-          </div>
-          </div>
-        <RaisedButton className="postSubmitButton" backgroundColor="#90C15B" type="submit" value="submit">Submit</RaisedButton>
+            <div className="row">
+              <div className="newPostPadding col-md-4">
+                <label>
+                  Description:
+                  <TextField
+                    multiLine={true} rows={1} rowsMax={5}
+                    id=""
+                    type="text"
+                    name="postDescription"
+                    value={this.state.description}
+                    onChange={this.descriptionHandleChange}
+                    required
+                  />
+                </label>
+              </div>
+            </div>
+            <div className="newPostPadding">
+              Project Location:
+              <div>
+                <label>
+                  Zip Code:
+                  <TextField
+                    id=""
+                    type="text"
+                    name="zipCode"
+                    value={this.state.zipCode}
+                    onChange={this.zipCodeHandleChange}
+                    required/>
+                </label>
+              </div>
+            </div>
+            <div className="newPostPadding">
+              Project Information:
+              <div>
+                <label>
+                  Budget
+                  <TextField
+                    id=""
+                    type="text"
+                    name="budget"
+                    value={this.state.budget}
+                    onChange={this.budgetHandleChange}
+                    required
+                  />
+                </label>
+                <div>
+                  <label>
+                    <div className="col-lg-6">Skills Needed:</div>
+                    <Checkbox
+                      label="None"
+                      defaultChecked="true"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="None"
+                      value="1"
+                      onChange={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Painting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Painting"
+                      value="2"
+                      onChange={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Drawing"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Drawing"
+                      value="3"
+                      onChange={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Sculpting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Sculpting"
+                      value="4"
+                      onChange={this.skillsHandleChange}
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <RaisedButton className="postSubmitButton" backgroundColor="#90C15B" type="submit" value="submit">Submit</RaisedButton>
       </form>
       </div>
       </Card>
     )
   }
-})
+});
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
 
 export default CreatePost
