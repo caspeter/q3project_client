@@ -25,7 +25,6 @@ const LoginForm = React.createClass({
     return(
 
       <div className="row center">
-        <h4>Sign In</h4>
         <form onSubmit={this.props.handleLoginSubmit}>
           {/* <RaisedButton label="Username" /> */}
           {/* <div className="col-l-6"> */}
