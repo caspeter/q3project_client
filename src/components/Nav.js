@@ -8,37 +8,44 @@ import AppBar from 'material-ui/AppBar';
 
 const Nav = React.createClass({
   render: function(){
+    var buttonStyle = {
+      backgroundColor: 'transparent',
+      color: 'white'
+    };
     return(
-     <nav>
+      <nav>
+         <div className="navWrapper">
+          <RaisedButton
+          className="navButton"
+             href="/"
+             label="Home"
+             backgroundColor="#90C15B"
+           />
+           { " " }
+          <RaisedButton
+          className="navButton"
+             href="/myProfile"
+             label="My Profile"
+             backgroundColor="#90C15B"
+           />
+           { " " }
+          <RaisedButton
+          className="navButton"
+             href="/myProjects"
+             label="My Projects"
+             backgroundColor="#90C15B"
+           />
+           { " " }
 
-         <RaisedButton
-            href="/"
-            label="Home"
-            primary={true}
-          />
-          { " " }
-         <RaisedButton
-            href="/myProfile"
-            label="My Profile"
-            primary={true}
-          />
-          { " " }
-         <RaisedButton
-            href="/myProjects"
-            label="My Projects"
-            primary={true}
-          />
-          { " " }
-
-         <RaisedButton
-            onClick={this.props.handleLogoutSubmit}
-            href="/"
-            label="Logout"
-            primary={true}
-          />
-
-
-    </nav>
+          <RaisedButton
+          className="navButton"
+             onClick={this.props.handleLogoutSubmit}
+             href="/"
+             label="Logout"
+             backgroundColor="#90C15B"
+           />
+       </div>
+     </nav>
 
    );
   }
