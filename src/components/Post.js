@@ -51,7 +51,7 @@ const post = React.createClass({
 
   handleAddCommentText(event){
     this.setState({addCommentText:event.target.value});
-    console.log(this.state.addCommentText);
+    // console.log(this.state.addCommentText);
   },
 
   postComment(event){
@@ -70,12 +70,10 @@ const post = React.createClass({
         alert("error posting new comment");
         console.log(err);
       } else {
-        // console.log(res.body);
-        // console.log(this.state.comments);
-        // this.state.comments.push(JSON.stringify(res.body));
         console.log("new comment posted ");
         this.getComments();
         console.log(this.state.comments);
+        this.setState({addCommentText: ''})
       }
     });
   },
