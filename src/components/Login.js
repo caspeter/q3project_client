@@ -26,14 +26,15 @@ const LoginForm = React.createClass({
           <TextField
             floatingLabelText="Password"
             type="text"
-            value={this.props.password} onChange={this.props.handlePassword}
+            value={this.props.password}
+            onChange={this.props.handlePassword}
             className="marginRight"
           />
           {/* </div> */}
-          <RaisedButton label="submit" type="submit" value="Login" id="submit"
-            href="/feed"
-            onTouchTap={this.handleTouchTap}
-            onClick={this.handleClick}
+          <RaisedButton label="submit"
+            type="submit"
+            value="Login"
+            id="submit"
           />
           {/* <input type="submit" value="Login" id="submit"/> */}
         </form>

@@ -18,19 +18,19 @@ const Nav = React.createClass({
           />
           { " " }
          <RaisedButton
-            href="/myProfile"
+            href="/profile"
             label="My Profile"
             primary={true}
           />
           { " " }
          <RaisedButton
-            href="/myProjects"
+            href="/Projects"
             label="My Projects"
             primary={true}
           />
           { " " }
 
-         <RaisedButton
+          <RaisedButton
             onClick={this.props.handleLogoutSubmit}
             href="/"
             label="Logout"
