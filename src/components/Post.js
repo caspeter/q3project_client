@@ -38,7 +38,7 @@ const post = React.createClass({
   },
 
   setupSkills() {
-    let skillsArray = [];
+    // let skillsArray = [];
     for(var skill in this.props.postData.skills){
       this.state.skills.push(this.props.postData.skills[skill])
     }
@@ -56,10 +56,28 @@ const post = React.createClass({
 
   postComment(event){
     event.preventDefault();
-    let postId = this.props.postData.id
+    let postId = this.props.postData.id;
+    // console.log(postId);
     request
-    .post(DATABASE_URL + `/api/comments/${postId}`)
-    .send({comments: this.state.addCommentText})
+    .post(DATABASE_URL + `/api/comments`)
+    .send({
+      userId: 2,
+      postId: postId,
+      commentBody: this.state.addCommentText
+    })
+    .end((err, res) => {
+      if (err || !res.ok) {
+        alert("error posting new comment");
+        console.log(err);
+      } else {
+        // console.log(res.body);
+        // console.log(this.state.comments);
+        // this.state.comments.push(JSON.stringify(res.body));
+        console.log("new comment posted ");
+        this.getComments();
+        console.log(this.state.comments);
+      }
+    });
   },
 
   render() {
