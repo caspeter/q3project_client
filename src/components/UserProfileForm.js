@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, browserHistory, location } from 'react-router'
 //import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
@@ -16,20 +17,42 @@ import Avatar from 'material-ui/Avatar/Avatar';
 const ProfileForm = React.createClass({
 
   getInitialState(){
+    console.log(this.props, "props at initial state");
     return ({
-      skills:[1]
+      skills:[1],
+      //disabled: ''
     });
   },
 
-  handleChange(event, index, value){
-    console.log(this.state);
-    this.setState({value});
+  componentDidMount(){
+    //this.disableFields();
+    console.log(this.props.disabled);
+  },
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({...nextProps.profileData});
+    this.setState(nextProps.disabled);
+  },
+
+  disableFields(){
+    var location = browserHistory.getCurrentLocation();
+    console.log(location, this.state);
+    if (location === "/myProfile"){
+      this.setState({disabled:true});
+      console.log(location, this.state);
+    }
+  },
+
+  handleSubmit(e) {
+    console.log('handleSubmit');
+    e.preventDefault();
+
+    var formData = {...this.state};
+
+    this.props.onProfileSubmit(formData);
   },
 
   setValue: function (field, event) {
-    //If the input fields were directly within this
-    //this component, we could use this.refs.[FIELD].value
-    //Instead, we want to save the data for when the form is submitted
     var object = {};
     object[field] = event.target.value;
     this.setState(object);
@@ -40,40 +63,40 @@ const ProfileForm = React.createClass({
       <Card className="uiCard">
         <div className="profileContainer">
           <h3>Please Enter Your Information</h3>
-          <form onSubmit={this.props.handleProfileSubmit.bind(null, this.state)}>
+          <form onSubmit={this.handleSubmit}>
 
             <div className="row">
               <div className="col-md-5">
-                <TextField type="text"
-                  id="username" floatingLabelText="Username" onChange={this.setValue.bind(this, 'username')} value={this.state.username} required/>
+                <TextField type="text" value={this.state.username} onChange={this.setValue.bind(this, 'username')}
+                  id="username" floatingLabelText="Username" disabled={this.props.disabled} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} required />
+                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled} />
               </div>
             </div>
 
             <div className="row">
               <div className="col-md-5">
                 <TextField type="text"
-                  id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstName')} value={this.state.firstName} required />
+                  id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstName')} value={this.state.firstName}  />
               </div>
               <div className="col-sm-offset-2 col-md-5">
                 <TextField type="text"
-                  id="lastname" floatingLabelText="Last Name" onChange={this.setValue.bind(this, 'lastName')} value={this.state.lastName} required />
+                  id="lastname" floatingLabelText="Last Name" onChange={this.setValue.bind(this, 'lastName')} value={this.state.lastName}  />
               </div>
             </div>
 
             <div className="row">
               <div className="col-md-5">
-                <TextField type="number" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')} required/>
+                <TextField type="number" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} required/>
+                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} disabled={this.props.disabled}/>
               </div>
             </div>
               <div className="row">
                 <div className="col-md-5">
-                  <TextField type="number" floatingLabelText="Zip Code" value={this.state.zipCode} onChange={this.setValue.bind(this, 'zipCode')} required/>
+                  <TextField type="number" floatingLabelText="Zip Code" value={this.state.zipCode} onChange={this.setValue.bind(this, 'zipCode')} />
                 </div>
                 <div className="col-sm-offset-2 col-md-5">
                 </div>
@@ -85,7 +108,7 @@ const ProfileForm = React.createClass({
                 floatingLabelText="Skill"
                 value={this.state.value}
                 onChange={this.handleChange}
-                required
+                disabled={this.props.disabled}
                >
                 <MenuItem value={0} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
                 <MenuItem value={1} primaryText="Drawing" onChange={this.setValue.bind(this, 'skill')}/>
@@ -97,15 +120,15 @@ const ProfileForm = React.createClass({
               <br></br>
                 <div className="row">
                   <div className="col-md-5">
-                    <TextField type="text" floatingLabelText="Profile URL" value={this.state.profileUrl} onChange={this.setValue.bind(this, 'profileUrl')} required/>
+                    <TextField type="text" floatingLabelText="Profile URL" value={this.state.profileUrl} onChange={this.setValue.bind(this, 'profileUrl')} />
                   </div>
                   <div className="col-sm-offset-2 col-md-5">
-                    <TextField type="text" floatingLabelText="Personal Website" value={this.state.website} onChange={this.setValue.bind(this, 'website')} required/>
+                    <TextField type="text" floatingLabelText="Personal Website" value={this.state.website} onChange={this.setValue.bind(this, 'website')} />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-md-5">
-                    <TextField type="text" floatingLabelText="Bio" value={this.state.userBio} onChange={this.setValue.bind(this, 'userBio')} required/>
+                    <TextField type="text" floatingLabelText="Bio" value={this.state.userBio} onChange={this.setValue.bind(this, 'userBio')} />
                   </div>
                 </div>
                 <br></br>

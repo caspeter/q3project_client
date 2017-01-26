@@ -11,7 +11,6 @@ import request from 'superagent';
 
 var DATABASE_URL = 'http://localhost:5000';
 
-
 var CreatePost = React.createClass({
   getInitialState () {
     return({
@@ -22,20 +21,6 @@ var CreatePost = React.createClass({
       skills: []
     })
   },
-
-
-  // getSkills(){
-  //   request
-  //   .get(DATABASE_URL + '/api/skills')
-  //   .end((err, res)=>{
-  //     if (err || !res.ok){
-  //       alert("ERROR with skills");
-  //     } else {
-  //       this.setState({skills: res.body});
-  //       console.log(this.state.skills);
-  //     };
-  //   });
-  // },
 
   // ONCHANGE HANDLERS -----------------------
 
@@ -216,6 +201,7 @@ var CreatePost = React.createClass({
               backgroundColor="#90C15B"
               type="submit"
               value="submit">Submit</RaisedButton>
+
       </form>
       </div>
       </Card>
