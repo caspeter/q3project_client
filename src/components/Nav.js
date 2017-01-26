@@ -14,7 +14,7 @@ const Nav = React.createClass({
     };
     return(
       <nav>
-         <div className="navWrapper">
+        <div className="navWrapper">
           <RaisedButton
           className="navButton"
              href="/"
@@ -24,14 +24,14 @@ const Nav = React.createClass({
            { " " }
           <RaisedButton
           className="navButton"
-             href="/myProfile"
+             href="/profile"
              label="My Profile"
              backgroundColor="#90C15B"
            />
            { " " }
           <RaisedButton
           className="navButton"
-             href="/myProjects"
+             href="/Projects"
              label="My Projects"
              backgroundColor="#90C15B"
            />
@@ -46,6 +46,7 @@ const Nav = React.createClass({
            />
        </div>
      </nav>
+
 
    );
   }

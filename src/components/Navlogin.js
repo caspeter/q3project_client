@@ -10,7 +10,14 @@ const Nav1 = React.createClass({
   render: function(){
     return(
      <nav>
-         <div>Please Login Below</div>
+       <div>Don't have an account?
+          { "                   " }
+          <RaisedButton
+           href="/profile"
+           label="Regster Here"
+           primary={true}
+           />
+       </div>
      </nav>
    );
   }
