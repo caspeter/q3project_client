@@ -16,9 +16,8 @@ var profileContainer = React.createClass({
   componentDidMount(){
   },
 
-  handleProfileSubmit(formState, event){
+  handleProfileSubmit(formState){
     console.log(formState);
-    event.preventDefault();
 
     request
       .post('http://localhost:5000/api/users/')
@@ -38,14 +37,14 @@ var profileContainer = React.createClass({
   render: function(){
     var profileForm = (true) ?
     <ProfileForm
-      handleProfileSubmit={this.handleProfileSubmit}
+      onProfileSubmit={this.handleProfileSubmit}
+      disabled={false}
       /> : null
 
     return(
       <div>
         {profileForm}
-
-      </div>
+    </div>
     )
   }
 });
