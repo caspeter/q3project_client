@@ -23,6 +23,7 @@ var CreatePost = React.createClass({
     })
   },
 
+
   // getSkills(){
   //   request
   //   .get(DATABASE_URL + '/api/skills')
@@ -59,24 +60,39 @@ var CreatePost = React.createClass({
   },
 
   skillsHandleChange(event) {
-    console.log('hi');
-    console.log(event.target.value);
+    console.log(this.state.skills);
+    let skillNum = event.target.value;
+    if (this.state.skills.includes(event.target.value)) {
+      console.log('state already has this number');
+      let newArr = this.state.skills.slice();
+      let numIndex = newArr.indexOf(skillNum);
+      newArr.splice(numIndex, 1);
+      this.setState({
+        skills: newArr
+      });
+      console.log(this.state);
+    } else {
+      // console.log("before concat", this.state.skills);
+      let changing = this.state.skills.concat([skillNum]);
+      this.setState({skills: changing});
+      // console.log("after concat", this.state.skills);
+    }
   },
 
   handleSubmit(event) {
     event.preventDefault();
-    for (const checkbox of this.selectedCheckboxes) {
-      console.log(checkbox, 'is selected.');
-    }
-    alert('A form was submitted: ' + this.state.value);
-    console.log(this.state.value);
+    console.log(this.state.skills);
+    // alert('A form was submitted: ' + this.state.value);
+    // console.log(this.state.value);
   },
 
   render: function () {
+
+
     return (
       <Card className="uiCard">
         <div className="newPostContainer">
-          <form onSubmit={this.state.value}>
+          <form onSubmit={this.handleSubmit}>
             <h3>Create A New Post</h3>
             <div className="row newPostPadding">
               <label>
@@ -87,7 +103,7 @@ var CreatePost = React.createClass({
                   name="postTitle"
                   value={this.state.title}
                   onChange={this.titleHandleChange}
-                  required
+                  // required
                 />
               </label>
             </div>
@@ -102,7 +118,7 @@ var CreatePost = React.createClass({
                     name="postDescription"
                     value={this.state.description}
                     onChange={this.descriptionHandleChange}
-                    required
+                    // required
                   />
                 </label>
               </div>
@@ -118,7 +134,7 @@ var CreatePost = React.createClass({
                     name="zipCode"
                     value={this.state.zipCode}
                     onChange={this.zipCodeHandleChange}
-                    required
+                    // required
                   />
                 </label>
               </div>
@@ -134,7 +150,7 @@ var CreatePost = React.createClass({
                     name="budget"
                     value={this.state.budget}
                     onChange={this.budgetHandleChange}
-                    required
+                    // required
                   />
                 </label>
                 <div>
@@ -142,7 +158,6 @@ var CreatePost = React.createClass({
                     <div className="col-lg-6">Skills Needed:</div>
                     <Checkbox
                       label="None"
-                      defaultChecked="true"
                       type="checkbox"
                       style={styles.checkbox}
                       name="None"
