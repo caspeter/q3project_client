@@ -74,4 +74,9 @@ img{
 .newPostCard {
   display: flex;
   align-items: center;
+
+h3{
+  color: #545A5E;
+  text-align: center;
+  padding-top: 15px;
 }
