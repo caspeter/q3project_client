@@ -84,6 +84,25 @@ var CreatePost = React.createClass({
     console.log(this.state.skills);
     // alert('A form was submitted: ' + this.state.value);
     // console.log(this.state.value);
+
+    var postObjToSend = {
+      title: this.state.title,
+      description:this.state.description,
+      location: this.state.zipCode,
+      budget: this.state.budget,
+      skills: this.state.skills
+    }
+
+    request
+    .post(DATABASE_URL+`/api/posts/2`)
+    .send(postObjToSend)
+    .end((err,res)=>{
+      if (err || !res.ok) {
+        console.log('ERROR: ', err);
+      } else {
+        console.log(res.body);
+      }
+    })
   },
 
   render: function () {
