@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -6,6 +7,7 @@ const LoginForm = React.createClass({
   render(){
 
     return(
+
       <div className="row center">
         <h4>Sign In</h4>
         <form onSubmit={this.props.handleLoginSubmit}>
@@ -28,10 +30,15 @@ const LoginForm = React.createClass({
             className="marginRight"
           />
           {/* </div> */}
-          <RaisedButton label="submit" type="submit" value="Login" id="submit" />
+          <RaisedButton label="submit" type="submit" value="Login" id="submit"
+            href="/feed"
+            onTouchTap={this.handleTouchTap}
+            onClick={this.handleClick}
+          />
           {/* <input type="submit" value="Login" id="submit"/> */}
         </form>
       </div>
+
     );
   }
 });
