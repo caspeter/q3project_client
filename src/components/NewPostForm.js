@@ -16,6 +16,15 @@ const styles = {
 };
 
 var CreatePost = React.createClass({
+  getInitialState () {
+    return({
+      comments: [],
+      skills: [],
+      expanded: false,
+      addCommentText: ''
+    })
+  },
+
   propTypes: {
     value: React.PropTypes.object.isRequired
   },

@@ -10,7 +10,9 @@ const newPost = React.createClass({
 
   render() {
     return (
-      <NewPost></NewPost>
+      <div className="postsContainer">
+        <NewPost></NewPost>
+      </div>
     )
   }
 });
