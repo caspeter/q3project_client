@@ -38,7 +38,7 @@ var editProfileContainer = React.createClass({
     console.log(formState);
 
     request
-      .patch('http://localhost:5000/api/users/1')
+      .patch('http://localhost:5000/api/users/2')
       .send(formState)
       .end(function(err, res){
         if (err || !res.ok){
