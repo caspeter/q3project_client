@@ -45,35 +45,35 @@ const ProfileForm = React.createClass({
             <div className="row">
               <div className="col-md-5">
                 <TextField type="text"
-                  id="username" floatingLabelText="Username" onChange={this.setValue.bind(this, 'username')} value={this.state.username}/>
+                  id="username" floatingLabelText="Username" onChange={this.setValue.bind(this, 'username')} value={this.state.username} required/>
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')}/>
+                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} required />
               </div>
             </div>
 
             <div className="row">
               <div className="col-md-5">
                 <TextField type="text"
-                  id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstName')} value={this.state.firstName}/>
+                  id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstName')} value={this.state.firstName} required />
               </div>
               <div className="col-sm-offset-2 col-md-5">
                 <TextField type="text"
-                  id="lastname" floatingLabelText="last Name" onChange={this.setValue.bind(this, 'lastName')} value={this.state.lastName}/>
+                  id="lastname" floatingLabelText="Last Name" onChange={this.setValue.bind(this, 'lastName')} value={this.state.lastName} required />
               </div>
             </div>
 
             <div className="row">
               <div className="col-md-5">
-                <TextField type="text" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')}/>
+                <TextField type="number" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')} required/>
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')}/>
+                <TextField type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} required/>
               </div>
             </div>
               <div className="row">
                 <div className="col-md-5">
-                  <TextField type="text" floatingLabelText="Zip Code" value={this.state.zipCode} onChange={this.setValue.bind(this, 'zipCode')}/>
+                  <TextField type="number" floatingLabelText="Zip Code" value={this.state.zipCode} onChange={this.setValue.bind(this, 'zipCode')} required/>
                 </div>
                 <div className="col-sm-offset-2 col-md-5">
                 </div>
@@ -85,26 +85,27 @@ const ProfileForm = React.createClass({
                 floatingLabelText="Skill"
                 value={this.state.value}
                 onChange={this.handleChange}
+                required
                >
-                <MenuItem value={'painting'} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
-                <MenuItem value={1} primaryText="Drawing" />
-                <MenuItem value={2} primaryText="Sculpting" />
-                <MenuItem value={3} primaryText="None" />
+                <MenuItem value={0} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
+                <MenuItem value={1} primaryText="Drawing" onChange={this.setValue.bind(this, 'skill')}/>
+                <MenuItem value={2} primaryText="Sculpting" onChange={this.setValue.bind(this, 'skill')}/>
+                <MenuItem value={3} primaryText="None" onChange={this.setValue.bind(this, 'skill')}/>
              </SelectField>
 
 
               <br></br>
                 <div className="row">
                   <div className="col-md-5">
-                    <TextField type="text" floatingLabelText="Profile URL" value={this.state.profileUrl} onChange={this.setValue.bind(this, 'profileUrl')}/>
+                    <TextField type="text" floatingLabelText="Profile URL" value={this.state.profileUrl} onChange={this.setValue.bind(this, 'profileUrl')} required/>
                   </div>
                   <div className="col-sm-offset-2 col-md-5">
-                    <TextField type="text" floatingLabelText="Personal Website" value={this.state.website} onChange={this.setValue.bind(this, 'website')}/>
+                    <TextField type="text" floatingLabelText="Personal Website" value={this.state.website} onChange={this.setValue.bind(this, 'website')} required/>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-md-5">
-                    <TextField type="text" floatingLabelText="Bio" value={this.state.userBio} onChange={this.setValue.bind(this, 'userBio')}/>
+                    <TextField type="text" floatingLabelText="Bio" value={this.state.userBio} onChange={this.setValue.bind(this, 'userBio')} required/>
                   </div>
                 </div>
                 <br></br>

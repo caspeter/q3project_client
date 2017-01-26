@@ -21,16 +21,13 @@ var profileContainer = React.createClass({
     event.preventDefault();
 
     request
-    //.get('http://localhost:5000/api/users/1')
       .post('http://localhost:5000/api/users/')
-      // .set('Content-Type', 'application/json')
       .send(formState)
       .end(function(err, res){
         if (err || !res.ok){
           alert("error posting new user profile");
         } else {
           console.log(res.body);
-          alert('new user posted' + JSON.stringify(res.body));
           browserHistory.push('/feed')
         }
       });
