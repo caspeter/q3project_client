@@ -9,6 +9,7 @@ import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Carousel from 'react-bootstrap/lib/Carousel';
 
+var DATABASE_URL = 'https://artops-server.herokuapp.com';
 
 var landingContainer = React.createClass({
 
@@ -41,7 +42,7 @@ var landingContainer = React.createClass({
     handleLoginSubmit(event){
       event.preventDefault();
       request
-      .get('http://localhost:5000/api/users/username/' + this.state.username)
+      .get(DATABASE_URL + '/api/users/username/' + this.state.username)
         .end(function(err, res){
           if(err){
             console.log('error getting username', err);
