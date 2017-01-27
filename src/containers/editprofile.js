@@ -5,7 +5,7 @@ import { Router, browserHistory } from 'react-router'
 import routes from '../router'
 import Nav from '../components/Nav';
 
-const DATABASE_URL = "http://localhost:5000";
+const DATABASE_URL = "https://artops-server.herokuapp.com";
 
 var editProfileContainer = React.createClass({
 
