@@ -154,6 +154,10 @@ img{
   margin-left: -2rem;
 }
 
+.profileFormChecklist {
+  margin-left: 0;
+}
+
 /*----- New Post Form -----*/
 
 .newPostCard {
