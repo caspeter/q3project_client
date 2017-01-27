@@ -75,15 +75,6 @@ render: function(){
       {isLogged}
       {login}
         <div className="postsContainer">
-          <br />
-          <div>
-
-          </div>
-          <br />
-          <div>
-            Idque iisque efficiendi in cum. Eos ad feugait efficiantur, sanctus nominavi argumentum eu pri. No scripta accusam philosophia quo, ne aeterno temporibus pri. Et ridens tritani moderatius sit, sanctus omnesque an pri, ea putant audire qui. Equidem partiendo no pri.
-          </div>
-          <br />
           </div>
           <Carousel>
             <Carousel.Item>
@@ -104,10 +95,15 @@ render: function(){
               <img width={900} height={500} alt="900x500" src="img/art-house-sculpting-crop.jpg"/>
               <Carousel.Caption>
                 <h1 className="landingCarouselHeader">Art Dilettante</h1>
-                <h2 className="secondaryLandingCarouselParagraph">Customers can search through ArtOps posts to <br></br>find Local Artist, or make thier own posts to <br></br>connect them with Artists who can make <br></br>their project dreams become reality.</h2>
+                <h2 className="secondaryLandingCarouselParagraph">Customers can search through ArtOps posts to find Local Artist, or post their needs to connect them with Artists who can make their project dreams become reality.</h2>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
+        <footer>
+          <p className="footerText">
+            Created By: Anna, Cassie, Evan, Heidi, and Matt
+          </p>
+        </footer>
       </div>
   );
   }

@@ -1,3 +1,5 @@
+/*----- Body -----*/
+
 body {
   margin: 0;
   padding: 0;
@@ -22,6 +24,7 @@ th, td {
   overflow: scroll !important;
   text-overflow: inherit !important;
 }
+/*----- Navigation Bar -----*/
 
 nav {
   width: 100%;
@@ -44,6 +47,8 @@ nav {
   margin: 0 10px 0 10px;
   background-color: #90C15B !important;
 }
+
+/*----- Posts -----*/
 
 .rightAlign {
   text-align: right;
@@ -80,10 +85,7 @@ nav {
 }
 
 
-/* --- Landing page styling --- */
-img{
-  width: 100%;
-}
+/*----- Landing page -----*/
 
 .center{
   display: flex;
@@ -91,48 +93,8 @@ img{
   justify-content: center
 }
 
-.marginRight {
-  margin-right: 50px;
-}
-
-.profileContainer{
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.profileSubmitButton{
-  text-align: center;
-  padding-bottom: 15px;
-}
-
-.newPostCard {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-.newPostPadding {
-  display: flex;
-  padding-left: 15px;
-}
-
-h3{
-  color: #545A5E;
-  text-align: center;
-  padding-top: 15px;
-}
-
-.postSubmitButton {
-  margin: 12;
-  backgroundColor: #90C15B;
-}
-
-.newPostContainer {
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 20px;
+.carousel {
+  margin-bottom: 2rem;
 }
 
 .carousel-caption {
@@ -153,4 +115,77 @@ h3{
 
 .secondarylandingCarouselParagraph {
   text-shadow: 2px 2px 5px #545A5E;
+}
+
+footer {
+  background-color: #545A5E;
+  height: 10rem;
+}
+
+.footerText {
+  padding-left: 2rem;
+  transform: translateY(155%);
+  color: white;
+  font-size: 1.75rem;
+}
+
+img{
+  width: 100%;
+}
+
+/*----- Profile Form -----*/
+
+.marginRight {
+  margin-right: 50px;
+}
+
+.profileAbout {
+  margin-left: -4rem;
+}
+
+.profileContainer{
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profileSubmitButton{
+  text-align: center;
+  padding-bottom: 15px;
+  margin-left: -2rem;
+}
+
+/*----- New Post Form -----*/
+
+.newPostCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.newPostPadding {
+  display: flex;
+  padding-left: 15px;
+}
+
+h3{
+  color: #545A5E;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.postSubmitButton {
+  align-self: baseline;
+  backgroundColor: #90C15B;
+}
+
+.newPostContainer {
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+body { font-size:70%;}
 }

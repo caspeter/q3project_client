@@ -36,7 +36,7 @@ const LoginForm = React.createClass({
             id="username"
             className="marginRight"
             underlineFocusStyle={styles.underlineStyle}
-      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           />
           {/* </div> */}
           {/* <div className="col-l-6"> */}
@@ -47,7 +47,7 @@ const LoginForm = React.createClass({
             onChange={this.props.handlePassword}
             className="marginRight"
             underlineFocusStyle={styles.underlineStyle}
-      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           />
           {/* </div> */}
           <RaisedButton label="Log in"
