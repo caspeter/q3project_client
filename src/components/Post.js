@@ -116,14 +116,7 @@ const post = React.createClass({
             }
           </div>
         </CardText>
-        <CardActions className="rightAlign">
-          <Button
-            label="Favorite Post"
-            primary={true}
-          />
-        </CardActions>
         <CardText expandable={true}>
-          <h3>Comments</h3>
           <div>
             <Table>
               <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
