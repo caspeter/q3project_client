@@ -31,6 +31,12 @@ var landingContainer = React.createClass({
       this.setState({password:event.target.value})
     },
 
+    handleLogoutSubmit(event){
+      //alert('hi');
+      event.preventDefault();
+      sessionStorage.removeItem('id');
+      browserHistory.push('/');
+    },
 
     handleLoginSubmit(event){
       event.preventDefault();
@@ -46,14 +52,9 @@ var landingContainer = React.createClass({
           browserHistory.push('/feed');
 
           }
-        });
+      });
     },
-    handleLogoutSubmit(event){
-      alert('hi');
-      event.preventDefault();
-      sessionStorage.removeItem('id');
-      browserHistory.push('/');
-    },
+
 
 
 render: function(){
@@ -66,9 +67,16 @@ render: function(){
       handleLoginSubmit={this.handleLoginSubmit}
     /> : null;
 
-    sessionStorage.getItem('username');
-    const isLogged = (sessionStorage.username) ?
-      <Nav /> : <Nav1 />
+
+
+      const isLogged = (sessionStorage.id) ?
+        <Nav
+          handleLogoutSubmit={this.handleLogoutSubmit} />
+          :
+        <Nav1
+          handleLoginSubmit={this.handleLoginSubmit}/>
+
+
 
   return(
       <div>

@@ -78,9 +78,9 @@ var CreatePost = React.createClass({
       budget: this.state.budget,
       skills: this.state.skills
     }
-
+    var userId = sessionStorage.getItem('id');
     request
-    .post(DATABASE_URL+`/api/posts/2`)
+    .post(DATABASE_URL+`/api/posts/` + userId)
     .send(postObjToSend)
     .end((err,res)=>{
       if (err || !res.ok) {

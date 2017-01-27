@@ -3,6 +3,7 @@ import request from 'superagent';
 import ProfileForm from '../components/UserProfileForm.js';
 import { Router, browserHistory } from 'react-router'
 import routes from '../router'
+import Nav from '../components/Nav';
 
 const DATABASE_URL = "http://localhost:5000";
 
@@ -12,6 +13,12 @@ var editProfileContainer = React.createClass({
     return ({
       profileData: {},
     });
+  },
+
+  handleLogoutSubmit(event){
+    event.preventDefault();
+    sessionStorage.removeItem('id');
+    browserHistory.push('/');
   },
 
   componentDidMount(){
@@ -28,7 +35,6 @@ var editProfileContainer = React.createClass({
           console.log("error getting user info")
         } else {
           this.setState({profileData: res.body});
-
           console.log(this.state, "state of container after get data");
           this.render();
         }
@@ -38,9 +44,9 @@ var editProfileContainer = React.createClass({
 
   handleProfileSubmit(formState, event){
     console.log(formState);
-
+    var userId = sessionStorage.getItem('id');
     request
-      .patch('http://localhost:5000/api/users/2')
+      .patch(DATABASE_URL + '/api/users/' + userId)
       .send(formState)
       .end(function(err, res){
         if (err || !res.ok){
@@ -65,7 +71,9 @@ var editProfileContainer = React.createClass({
 
     return(
       <div>
-        {profileForm}
+        <Nav
+          handleLogoutSubmit={this.handleLogoutSubmit} />
+          {profileForm}
       </div>
     )
   }
