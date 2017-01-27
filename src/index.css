@@ -134,3 +134,11 @@ h3{
   margin: 0 auto;
   padding-bottom: 20px;
 }
+
+.logo {
+  display: inline;
+  float: left;
+  height: 60px;
+  width: auto;
+  margin-top: -10px;
+}

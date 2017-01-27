@@ -15,6 +15,7 @@ const Nav = React.createClass({
     return(
       <nav>
         <div className="navWrapper">
+          <img className="logo" src="img/ArtOps.png"/>
           <RaisedButton
           className="navButton"
              href="/"
