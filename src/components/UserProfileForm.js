@@ -72,7 +72,7 @@ const ProfileForm = React.createClass({
                   id="username" floatingLabelText="Username" disabled={this.props.disabled} />
               </div>
               <div className="col-sm-offset-2 col-md-5">
-                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled} />
+                <TextField type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} hidden={this.props.disabled} disabled={this.props.disabled}/>
               </div>
             </div>
 
