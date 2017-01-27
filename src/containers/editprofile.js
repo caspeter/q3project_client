@@ -19,8 +19,10 @@ var editProfileContainer = React.createClass({
   },
 
   getUserProfile(){
+    var userId = sessionStorage.getItem('id');
+    console.log(userId);
     request
-      .get(DATABASE_URL + '/api/users/2')
+      .get(DATABASE_URL + '/api/users/' + userId)
       .end((err, res) => {
         if(err){
           console.log("error getting user info")

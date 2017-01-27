@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, browserHistory} from 'react-router'
 import TextField from 'material-ui/TextField';
 import {grey100, grey900} from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
@@ -86,6 +87,7 @@ var CreatePost = React.createClass({
         console.log('ERROR: ', err);
       } else {
         console.log(res.body);
+        browserHistory.push('/feed');
       }
     })
   },
