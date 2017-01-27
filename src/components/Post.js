@@ -14,7 +14,7 @@ import Chip from 'material-ui/Chip';
 
 import request from 'superagent';
 
-var DATABASE_URL = 'http://localhost:5000';
+var DATABASE_URL = 'https://artops-server.herokuapp.com';
 
 
 const post = React.createClass({
