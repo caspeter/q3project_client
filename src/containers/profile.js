@@ -36,7 +36,9 @@ var profileContainer = React.createClass({
           alert("error posting new user profile");
         } else {
           console.log(res.body);
-          browserHistory.push('/feed')
+          console.log(res.body[0].id);
+          sessionStorage.setItem('id', res.body[0].id);
+          browserHistory.push('/feed');
         }
       });
 
