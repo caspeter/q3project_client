@@ -134,3 +134,23 @@ h3{
   margin: 0 auto;
   padding-bottom: 20px;
 }
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.landingCarouselHeader {
+  font-size: 10rem;
+  text-shadow: 2px 2px 5px #545A5E;
+}
+
+.primaryLandingCarouselParagraph {
+  font-size: 4rem;
+  text-shadow: 2px 2px 5px #545A5E;
+}
+
+.secondarylandingCarouselParagraph {
+  text-shadow: 2px 2px 5px #545A5E;
+}
