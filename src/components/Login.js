@@ -50,7 +50,7 @@ const LoginForm = React.createClass({
       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           />
           {/* </div> */}
-          <RaisedButton label="submit"
+          <RaisedButton label="Log in"
             type="submit"
             value="Login"
             id="submit"

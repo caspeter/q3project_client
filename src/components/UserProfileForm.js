@@ -135,7 +135,7 @@ const ProfileForm = React.createClass({
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12 profileSubmitButton">
-                    <Button type="submit" label="Submit" primary={true}
+                    <Button type="submit" label="Submit"
                     className="buttonBackground"
                     backgroundColor="#90C15B" />
                   </div>
