@@ -19,7 +19,7 @@ const Nav = React.createClass({
           <img className="logo" src="img/ArtOps.png"/>
           <RaisedButton
           className="navButton"
-             href="/"
+             href="/feed"
              label="Home"
              backgroundColor="#90C15B"
            />
