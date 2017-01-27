@@ -153,7 +153,7 @@ var CreatePost = React.createClass({
               </div>
             </div>
             <div className="newPostPadding">
-              Project Location:
+              Project <br/>Location:
               <div>
                 <label>
                   <TextField
@@ -170,10 +170,11 @@ var CreatePost = React.createClass({
               </div>
             </div>
             <div className="newPostPadding">
-              Project Information:
+              Project <br/>Information:
               <div>
                 <label>
                   <TextField
+                    className="postFormBudget"
                     id=""
                     type="text"
                     name="budget"
@@ -184,9 +185,13 @@ var CreatePost = React.createClass({
                   />
                 </label>
                 <div>
+                <br />
                   <label>
                     <div class="row">
-                    <div className="col-lg-6">Skills Needed:</div>
+                    <div className="col-lg-12 skillsText">
+                      Skills Needed:
+                    </div>
+                    <div className="col-lg-6">
                     <Checkbox
                       label="None"
                       type="checkbox"
@@ -247,6 +252,8 @@ var CreatePost = React.createClass({
                       disabled={this.props.disabled}
                       iconStyle={{fill: "#90C15B"}}
                     />
+                    </div>
+                    <div className="col-lg-6">
                     <Checkbox
                       label="Knitting"
                       type="checkbox"
@@ -297,6 +304,7 @@ var CreatePost = React.createClass({
                       disabled={this.props.disabled}
                       iconStyle={{fill: "#90C15B"}}
                     />
+                    </div>
                     </div>
                   </label>
                 </div>

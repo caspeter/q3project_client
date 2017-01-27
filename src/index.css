@@ -195,7 +195,15 @@ h3{
 }
 
 .postFormZip {
-  margin-left: 5%;
+  margin-left: 22%;
+}
+
+.postFormBudget {
+  margin-left: 17%;
+}
+
+.skillsText {
+  padding-bottom: 5%;
 }
 
 .logo {
