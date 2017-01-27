@@ -24,15 +24,15 @@ const Nav = React.createClass({
            { " " }
           <RaisedButton
           className="navButton"
-             href="/profile"
+             href="/myProfile"
              label="My Profile"
              backgroundColor="#90C15B"
            />
            { " " }
           <RaisedButton
           className="navButton"
-             href="/Projects"
-             label="My Projects"
+             href="/newPost"
+             label="New Project"
              backgroundColor="#90C15B"
            />
            { " " }
