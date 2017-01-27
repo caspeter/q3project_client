@@ -24,7 +24,7 @@ const styles = {
   },
   checkbox: {
     marginBottom: 16,
-  },
+  }
 };
 
 var DATABASE_URL = 'http://localhost:5000';
@@ -195,6 +195,7 @@ var CreatePost = React.createClass({
                       value="1"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Painting"
@@ -204,6 +205,7 @@ var CreatePost = React.createClass({
                       value="2"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Drawing"
@@ -213,6 +215,7 @@ var CreatePost = React.createClass({
                       value="3"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Photography"
@@ -222,6 +225,7 @@ var CreatePost = React.createClass({
                       value="5"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Metal Work"
@@ -231,6 +235,7 @@ var CreatePost = React.createClass({
                       value="6"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Sewing"
@@ -240,6 +245,7 @@ var CreatePost = React.createClass({
                       value="7"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Knitting"
@@ -249,6 +255,7 @@ var CreatePost = React.createClass({
                       value="8"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Quilting"
@@ -258,6 +265,7 @@ var CreatePost = React.createClass({
                       value="9"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Wood Carving"
@@ -267,6 +275,7 @@ var CreatePost = React.createClass({
                       value="10"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Collaging"
@@ -276,6 +285,7 @@ var CreatePost = React.createClass({
                       value="11"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Graphic Design"
@@ -285,6 +295,7 @@ var CreatePost = React.createClass({
                       value="12"
                       onCheck={this.skillsHandleChange}
                       disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     </div>
                   </label>
