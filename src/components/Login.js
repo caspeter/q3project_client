@@ -42,7 +42,7 @@ const LoginForm = React.createClass({
           {/* <div className="col-l-6"> */}
           <TextField
             floatingLabelText="Password"
-            type="text"
+            type="password"
             value={this.props.password}
             onChange={this.props.handlePassword}
             className="marginRight"

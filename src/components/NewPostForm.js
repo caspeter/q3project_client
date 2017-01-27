@@ -194,6 +194,7 @@ var CreatePost = React.createClass({
                       name="None"
                       value="1"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
                     />
                     <Checkbox
                       label="Painting"
@@ -202,6 +203,7 @@ var CreatePost = React.createClass({
                       name="Painting"
                       value="2"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
                     />
                     <Checkbox
                       label="Drawing"
@@ -210,14 +212,7 @@ var CreatePost = React.createClass({
                       name="Drawing"
                       value="3"
                       onCheck={this.skillsHandleChange}
-                    />
-                    <Checkbox
-                      label="Sculpting"
-                      type="checkbox"
-                      style={styles.checkbox}
-                      name="Sculpting"
-                      value="4"
-                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
                     />
                     <Checkbox
                       label="Photography"
@@ -226,6 +221,70 @@ var CreatePost = React.createClass({
                       name="Photography"
                       value="5"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Metal Work"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Metal Work"
+                      value="6"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Sewing"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Sewing"
+                      value="7"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Knitting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Knitting"
+                      value="8"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Quilting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Quilting"
+                      value="9"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Wood Carving"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Wood Carving"
+                      value="10"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Collaging"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Collaging"
+                      value="11"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                    />
+                    <Checkbox
+                      label="Graphic Design"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Graphic Design"
+                      value="12"
+                      onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
                     />
                     </div>
                   </label>

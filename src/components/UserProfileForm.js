@@ -6,6 +6,7 @@ import SelectField from 'material-ui/SelectField';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/RaisedButton';
 import Card from 'material-ui/Card';
+import Checkbox from 'material-ui/Checkbox';
 // import CardActions from 'material-ui/Card/CardActions';
 // import CardHeader from 'material-ui/Card/CardHeader';
 // import CardMedia from 'material-ui/Card/CardMedia';
@@ -27,6 +28,12 @@ const styles = {
   floatingLabelFocusStyle: {
     color: "#90C15B",
   },
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
 };
 
 const ProfileForm = React.createClass({
@@ -34,13 +41,11 @@ const ProfileForm = React.createClass({
   getInitialState(){
     console.log(this.props, "props at initial state");
     return ({
-      skills:[1],
-      //disabled: ''
+      skills:[],
     });
   },
 
   componentDidMount(){
-    //this.disableFields();
     console.log(this.props.disabled);
   },
 
@@ -72,6 +77,25 @@ const ProfileForm = React.createClass({
     object[field] = event.target.value;
     this.setState(object);
   },
+  skillsHandleChange(event) {
+    console.log(this.state.skills);
+    let skillNum = event.target.value;
+    if (this.state.skills.includes(event.target.value)) {
+      console.log('state already has this number');
+      let newArr = this.state.skills.slice();
+      let numIndex = newArr.indexOf(skillNum);
+      newArr.splice(numIndex, 1);
+      this.setState({
+        skills: newArr
+      });
+      console.log(this.state);
+    } else {
+      // console.log("before concat", this.state.skills);
+      let changing = this.state.skills.concat([skillNum]);
+      this.setState({skills: changing});
+      // console.log("after concat", this.state.skills);
+    }
+  },
 
   render: function(){
     return(
@@ -89,9 +113,10 @@ const ProfileForm = React.createClass({
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
               </div>
               <div className="col-sm-offset-2 col-md-offset-1 col-md-5 col-lg-offset-1">
-                <TextField className="profileTextArea" type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled}
+                <TextField className="profileTextArea" type="password" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} hidden={this.props.disabled} disabled={this.props.disabled}
                 underlineFocusStyle={styles.underlineStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  />
               </div>
             </div>
 
@@ -132,21 +157,110 @@ const ProfileForm = React.createClass({
                 </div>
               </div>
             <h3 className="profileAbout">About</h3>
-
-              <SelectField className="col-md-offset-1 col-lg-offset-1"
-                floatingLabelText="Skill"
-                value={this.state.value}
-                onChange={this.handleChange}
-                disabled={this.props.disabled}
-                underlineFocusStyle={styles.underlineStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-               >
-                <MenuItem value={0} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
-                <MenuItem value={1} primaryText="Drawing" onChange={this.setValue.bind(this, 'skill')}/>
-                <MenuItem value={2} primaryText="Sculpting" onChange={this.setValue.bind(this, 'skill')}/>
-                <MenuItem value={3} primaryText="None" onChange={this.setValue.bind(this, 'skill')}/>
-             </SelectField>
-
+              <div>
+                <label>
+                  <div className="col-lg-6">My Skills:</div>
+                  <Checkbox
+                    label="None"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="None"
+                    value="1"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Painting"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Painting"
+                    value="2"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Drawing"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Drawing"
+                    value="3"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Photography"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Photography"
+                    value="5"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Metal Work"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Metal Work"
+                    value="6"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Sewing"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Sewing"
+                    value="7"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Knitting"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Knitting"
+                    value="8"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Quilting"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Quilting"
+                    value="9"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Wood Carving"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Wood Carving"
+                    value="10"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Collaging"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Collaging"
+                    value="11"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                  <Checkbox
+                    label="Graphic Design"
+                    type="checkbox"
+                    style={styles.checkbox}
+                    name="Graphic Design"
+                    value="12"
+                    onCheck={this.skillsHandleChange}
+                    disabled={this.props.disabled}
+                  />
+                </label>
+              </div>
 
                 <div className="row">
                   <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
