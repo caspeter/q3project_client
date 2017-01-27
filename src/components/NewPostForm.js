@@ -1,14 +1,31 @@
 import React from 'react';
 import { Router, browserHistory} from 'react-router'
 import TextField from 'material-ui/TextField';
-import {grey100, grey900} from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
-
 import request from 'superagent';
+import {orange500, blue500} from 'material-ui/styles/colors';
+
+const styles = {
+  underlineStyle: {
+    borderColor: "#90C15B",
+  },
+  floatingLabelStyle: {
+    color: "#90C15B",
+  },
+  floatingLabelFocusStyle: {
+    color: "#90C15B",
+  },
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
 
 var DATABASE_URL = 'http://localhost:5000';
 
@@ -102,29 +119,35 @@ var CreatePost = React.createClass({
             <h3>Create A New Post</h3>
             <div className="row newPostPadding">
               <label>
-                Title:
                 <TextField
+                  className="postFormTitle"
                   id="newPostTitle"
                   type="text"
                   name="postTitle"
+                  floatingLabelText="Title"
                   value={this.state.title}
                   onChange={this.titleHandleChange}
-                  // required
+                  underlineFocusStyle={styles.underlineStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  required
                 />
               </label>
             </div>
             <div className="row">
-              <div className="newPostPadding col-md-4">
+              <div className="newPostPadding">
                 <label>
-                  Description:
                   <TextField
+                    className="postFormDescription"
                     multiLine={true} rows={1} rowsMax={5}
                     id=""
                     type="text"
                     name="postDescription"
+                    floatingLabelText="Description"
                     value={this.state.description}
                     onChange={this.descriptionHandleChange}
-                    // required
+                    underlineFocusStyle={styles.underlineStyle}
+                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                    required
                   />
                 </label>
               </div>
@@ -133,14 +156,15 @@ var CreatePost = React.createClass({
               Project Location:
               <div>
                 <label>
-                  Zip Code:
                   <TextField
+                  className="postFormZip"
                     id=""
                     type="text"
                     name="zipCode"
+                    floatingLabelText="Zip Code"
                     value={this.state.zipCode}
                     onChange={this.zipCodeHandleChange}
-                    // required
+                    required
                   />
                 </label>
               </div>
@@ -149,18 +173,19 @@ var CreatePost = React.createClass({
               Project Information:
               <div>
                 <label>
-                  Budget
                   <TextField
                     id=""
                     type="text"
                     name="budget"
+                    floatingLabelText="Budget"
                     value={this.state.budget}
                     onChange={this.budgetHandleChange}
-                    // required
+                    required
                   />
                 </label>
                 <div>
                   <label>
+                    <div class="row">
                     <div className="col-lg-6">Skills Needed:</div>
                     <Checkbox
                       label="None"
@@ -194,6 +219,15 @@ var CreatePost = React.createClass({
                       value="4"
                       onCheck={this.skillsHandleChange}
                     />
+                    <Checkbox
+                      label="Photography"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Photography"
+                      value="5"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    </div>
                   </label>
                 </div>
               </div>
@@ -203,21 +237,11 @@ var CreatePost = React.createClass({
               backgroundColor="#90C15B"
               type="submit"
               value="submit">Submit</RaisedButton>
-
       </form>
       </div>
       </Card>
     )
   }
 });
-
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
-};
 
 export default CreatePost

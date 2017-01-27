@@ -82,23 +82,27 @@ const ProfileForm = React.createClass({
           <form onSubmit={this.handleSubmit}>
 
             <div className="row">
-              <div className="col-md-5">
+              <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
                 <TextField className="profileTextArea" type="text" value={this.state.username} onChange={this.setValue.bind(this, 'username')}
-                  id="username" floatingLabelText="Username" disabled={this.props.disabled} />
+                  id="username" floatingLabelText="Username" disabled={this.props.disabled}
+                  underlineFocusStyle={styles.underlineStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
               </div>
-              <div className="col-sm-offset-2 col-md-5">
-                <TextField className="profileTextArea" type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled} />
+              <div className="col-sm-offset-2 col-md-offset-1 col-md-5 col-lg-offset-1">
+                <TextField className="profileTextArea" type="text" floatingLabelText="Password" id="password" value={this.state.password} onChange={this.setValue.bind(this, 'password')} disabled={this.props.disabled}
+                underlineFocusStyle={styles.underlineStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
               </div>
             </div>
 
             <div className="row">
-              <div className="col-md-5">
+              <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
                 <TextField className="profileTextArea" type="text"
                   id="firstname" floatingLabelText="First Name" onChange={this.setValue.bind(this, 'firstName')} value={this.state.firstName}
                   underlineFocusStyle={styles.underlineStyle}
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
               </div>
-              <div className="col-sm-offset-2 col-md-5">
+              <div className="col-sm-offset-2 col-md-offset-1 col-md-5 col-lg-offset-1">
                 <TextField className="profileTextArea" type="text"
                   id="lastname" floatingLabelText="Last Name" onChange={this.setValue.bind(this, 'lastName')} value={this.state.lastName}
                   underlineFocusStyle={styles.underlineStyle}
@@ -107,34 +111,35 @@ const ProfileForm = React.createClass({
             </div>
 
             <div className="row">
-              <div className="col-md-5">
+              <div className="col-md-offset-1 col-md-5 col-lg-offset-1">
                 <TextField className="profileTextArea" type="number" floatingLabelText="Phone Number" value={this.state.phoneNumber} onChange={this.setValue.bind(this, 'phoneNumber')}
                 underlineFocusStyle={styles.underlineStyle}
                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
               </div>
-              <div className="col-sm-offset-2 col-md-5">
+              <div className="col-sm-offset-2 col-md-offset-1 col-md-5 col-lg-offset-1">
                 <TextField className="profileTextArea" type="text" floatingLabelText="Email Address" value={this.state.email} onChange={this.setValue.bind(this, 'email')} disabled={this.props.disabled}
                 underlineFocusStyle={styles.underlineStyle}
                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle}/>
               </div>
             </div>
               <div className="row">
-                <div className="col-md-5">
+                <div className="col-md-offset-1 col-md-5 col-lg-offset-1">
                   <TextField className="profileTextArea" type="number" floatingLabelText="Zip Code" value={this.state.zipCode} onChange={this.setValue.bind(this, 'zipCode')}
                   underlineFocusStyle={styles.underlineStyle}
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                 </div>
-                <div className="col-sm-offset-2 col-md-5">
+                <div className="col-md-offset-1 col-sm-offset-2 col-md-5">
                 </div>
               </div>
             <h3 className="profileAbout">About</h3>
-            <br></br>
 
-              <SelectField
+              <SelectField className="col-md-offset-1 col-lg-offset-1"
                 floatingLabelText="Skill"
                 value={this.state.value}
                 onChange={this.handleChange}
                 disabled={this.props.disabled}
+                underlineFocusStyle={styles.underlineStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                >
                 <MenuItem value={0} primaryText="Painting" onChange={this.setValue.bind(this, 'skill')}/>
                 <MenuItem value={1} primaryText="Drawing" onChange={this.setValue.bind(this, 'skill')}/>
@@ -143,21 +148,20 @@ const ProfileForm = React.createClass({
              </SelectField>
 
 
-              <br></br>
                 <div className="row">
-                  <div className="col-md-5">
+                  <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
                     <TextField className="profileTextArea" type="text" floatingLabelText="Profile URL" value={this.state.profileUrl} onChange={this.setValue.bind(this, 'profileUrl')}
                     underlineFocusStyle={styles.underlineStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                   </div>
-                  <div className="col-sm-offset-2 col-md-5">
+                  <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
                     <TextField className="profileTextArea" type="text" floatingLabelText="Personal Website" value={this.state.website} onChange={this.setValue.bind(this, 'website')}
                     underlineFocusStyle={styles.underlineStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-5">
+                  <div className="col-md-5 col-md-offset-1 col-lg-offset-1">
                     <TextField className="profileTextArea" type="text" floatingLabelText="Bio" value={this.state.userBio} onChange={this.setValue.bind(this, 'userBio')}
                     underlineFocusStyle={styles.underlineStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />

@@ -85,6 +85,7 @@ nav {
 }
 
 
+
 /*----- Landing page -----*/
 
 .center{
@@ -175,7 +176,8 @@ h3{
 }
 
 .postSubmitButton {
-  align-self: baseline;
+  text-align: center;
+  margin-left: 40%;
   backgroundColor: #90C15B;
 }
 
@@ -184,6 +186,18 @@ h3{
   width: 50%;
   margin: 0 auto;
   padding-bottom: 20px;
+}
+
+.postFormTitle {
+  margin-left: 50%;
+}
+
+.postFormDescription {
+  margin-left: 50%;
+}
+
+.postFormZip {
+  margin-left: 5%;
 }
 
 @media only screen and (max-width: 400px) {
