@@ -44,7 +44,7 @@ var landingContainer = React.createClass({
       .get('http://localhost:5000/api/users/username/' + this.state.username)
         .end(function(err, res){
           if(err){
-            console.log('error getting username');
+            console.log('error getting username', err);
           }
           else{
           console.log(res)

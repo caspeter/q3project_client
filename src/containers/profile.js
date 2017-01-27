@@ -34,6 +34,7 @@ var profileContainer = React.createClass({
       .end(function(err, res){
         if (err || !res.ok){
           alert("error posting new user profile");
+          console.log(err);
         } else {
           console.log(res.body);
           console.log(res.body[0].id);
