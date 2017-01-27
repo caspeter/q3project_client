@@ -154,6 +154,10 @@ img{
   margin-left: -2rem;
 }
 
+.profileFormChecklist {
+  margin-left: 0;
+}
+
 /*----- New Post Form -----*/
 
 .newPostCard {
@@ -195,7 +199,15 @@ h3{
 }
 
 .postFormZip {
-  margin-left: 5%;
+  margin-left: 22%;
+}
+
+.postFormBudget {
+  margin-left: 17%;
+}
+
+.skillsText {
+  padding-bottom: 5%;
 }
 
 .logo {

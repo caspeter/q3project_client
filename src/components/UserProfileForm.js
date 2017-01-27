@@ -159,7 +159,9 @@ const ProfileForm = React.createClass({
             <h3 className="profileAbout">About</h3>
               <div>
                 <label>
-                  <div className="col-lg-6">My Skills:</div>
+                  <div className="row profileFormChecklist">
+                  <div className="skillsText">My Skills:</div>
+                  <div className="col-lg-5">
                   <Checkbox
                     label="None"
                     type="checkbox"
@@ -168,6 +170,7 @@ const ProfileForm = React.createClass({
                     value="1"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Painting"
@@ -177,6 +180,7 @@ const ProfileForm = React.createClass({
                     value="2"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Drawing"
@@ -186,6 +190,7 @@ const ProfileForm = React.createClass({
                     value="3"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Photography"
@@ -195,6 +200,7 @@ const ProfileForm = React.createClass({
                     value="5"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Metal Work"
@@ -204,6 +210,7 @@ const ProfileForm = React.createClass({
                     value="6"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Sewing"
@@ -213,7 +220,10 @@ const ProfileForm = React.createClass({
                     value="7"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
+                  </div>
+                  <div className="col-lg-5">
                   <Checkbox
                     label="Knitting"
                     type="checkbox"
@@ -222,6 +232,7 @@ const ProfileForm = React.createClass({
                     value="8"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Quilting"
@@ -231,6 +242,7 @@ const ProfileForm = React.createClass({
                     value="9"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Wood Carving"
@@ -240,6 +252,7 @@ const ProfileForm = React.createClass({
                     value="10"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Collaging"
@@ -249,6 +262,7 @@ const ProfileForm = React.createClass({
                     value="11"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
                   <Checkbox
                     label="Graphic Design"
@@ -258,7 +272,10 @@ const ProfileForm = React.createClass({
                     value="12"
                     onCheck={this.skillsHandleChange}
                     disabled={this.props.disabled}
+                    iconStyle={{fill: "#90C15B"}}
                   />
+                  </div>
+                  </div>
                 </label>
               </div>
 
