@@ -32,7 +32,7 @@ var landingContainer = React.createClass({
     },
 
     handleLogoutSubmit(event){
-      alert('hi');
+      //alert('hi');
       event.preventDefault();
       sessionStorage.removeItem('id');
       browserHistory.push('/');

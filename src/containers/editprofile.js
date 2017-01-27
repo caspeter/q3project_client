@@ -3,6 +3,7 @@ import request from 'superagent';
 import ProfileForm from '../components/UserProfileForm.js';
 import { Router, browserHistory } from 'react-router'
 import routes from '../router'
+import Nav from '../components/Nav';
 
 const DATABASE_URL = "http://localhost:5000";
 
@@ -12,6 +13,12 @@ var editProfileContainer = React.createClass({
     return ({
       profileData: {},
     });
+  },
+
+  handleLogoutSubmit(event){
+    event.preventDefault();
+    sessionStorage.removeItem('id');
+    browserHistory.push('/');
   },
 
   componentDidMount(){
@@ -65,7 +72,9 @@ var editProfileContainer = React.createClass({
 
     return(
       <div>
-        {profileForm}
+        <Nav
+          handleLogoutSubmit={this.handleLogoutSubmit} />
+          {profileForm}
       </div>
     )
   }

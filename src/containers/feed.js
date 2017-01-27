@@ -9,6 +9,7 @@ const feed = React.createClass({
   getInitialState() {
     return null;
   },
+
   handleLogoutSubmit(event){
     event.preventDefault();
     sessionStorage.removeItem('id');
