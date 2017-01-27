@@ -10,7 +10,13 @@ const Nav1 = React.createClass({
   render: function(){
     return(
      <nav>
-         <div>Please Login Below</div>
+       <div className="navWrapper">
+          <RaisedButton
+           href="/profile"
+           label="Regster Here"
+           backgroundColor="#90C15B"
+           />
+       </div>
      </nav>
    );
   }

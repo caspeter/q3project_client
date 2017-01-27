@@ -6,12 +6,12 @@ import SelectField from 'material-ui/SelectField';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/RaisedButton';
 import Card from 'material-ui/Card';
-import CardActions from 'material-ui/Card/CardActions';
-import CardHeader from 'material-ui/Card/CardHeader';
-import CardMedia from 'material-ui/Card/CardMedia';
-import CardTitle from 'material-ui/Card/CardTitle';
-import CardText from 'material-ui/Card/CardText';
-import Avatar from 'material-ui/Avatar/Avatar';
+// import CardActions from 'material-ui/Card/CardActions';
+// import CardHeader from 'material-ui/Card/CardHeader';
+// import CardMedia from 'material-ui/Card/CardMedia';
+// import CardTitle from 'material-ui/Card/CardTitle';
+// import CardText from 'material-ui/Card/CardText';
+// import Avatar from 'material-ui/Avatar/Avatar';
 
 
 const ProfileForm = React.createClass({
@@ -60,6 +60,7 @@ const ProfileForm = React.createClass({
 
   render: function(){
     return(
+
       <Card className="uiCard">
         <div className="profileContainer">
           <h3>Please Enter Your Information</h3>
@@ -134,7 +135,7 @@ const ProfileForm = React.createClass({
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12 profileSubmitButton">
-                    <Button type="submit" label="Submit" primary={true}
+                    <Button type="submit" label="Submit"
                     className="buttonBackground"
                     backgroundColor="#90C15B" />
                   </div>
@@ -142,6 +143,7 @@ const ProfileForm = React.createClass({
           </form>
         </div>
       </Card>
+
     );
   }
 });

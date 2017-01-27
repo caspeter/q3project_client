@@ -6,7 +6,9 @@ import LoginForm from '../components/Login.js';
 import Nav from '../components/Nav.js';
 import Nav1 from '../components/Navlogin.js';
 import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
-import Carousel from'react-bootstrap/lib/Carousel';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import Carousel from 'react-bootstrap/lib/Carousel';
+
 
 var landingContainer = React.createClass({
 
@@ -29,25 +31,30 @@ var landingContainer = React.createClass({
       this.setState({password:event.target.value})
     },
 
+
     handleLoginSubmit(event){
-      console.log('hi');
       event.preventDefault();
-      sessionStorage.setItem( 'username', this.state.username );
-      this.props.history.push('./feed');
-    //  console.log(sessionStorage.username);
-    },
+      request
+      .get('http://localhost:5000/api/users/username/' + this.state.username)
+        .end(function(err, res){
+          if(err){
+            console.log('error getting username');
+          }
+          else{
+          console.log(res)
+          sessionStorage.setItem('id', res.body.id);
+          browserHistory.push('/feed');
 
-    handleClick: function(e) {
-    console.log("click", e);
+          }
+        });
     },
-
-    handleTouchTap: function(e) {
-    console.log("touchTap", e);
-    },
-
     handleLogoutSubmit(event){
-      sessionStorage.removeItem('username', this.state.username );
+      alert('hi');
+      event.preventDefault();
+      sessionStorage.removeItem('id');
+      browserHistory.push('/');
     },
+
 
 render: function(){
     var login = (true) ?
