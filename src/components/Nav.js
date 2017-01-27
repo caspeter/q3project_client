@@ -6,6 +6,7 @@ import {Link, IndexLink} from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 
+
 const Nav = React.createClass({
   render: function(){
     var buttonStyle = {
@@ -40,7 +41,6 @@ const Nav = React.createClass({
           <RaisedButton
           className="navButton"
              onClick={this.props.handleLogoutSubmit}
-             href="/"
              label="Logout"
              backgroundColor="#90C15B"
            />

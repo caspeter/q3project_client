@@ -31,6 +31,12 @@ var landingContainer = React.createClass({
       this.setState({password:event.target.value})
     },
 
+    handleLogoutSubmit(event){
+      alert('hi');
+      event.preventDefault();
+      sessionStorage.removeItem('id');
+      browserHistory.push('/');
+    },
 
     handleLoginSubmit(event){
       event.preventDefault();
@@ -46,14 +52,9 @@ var landingContainer = React.createClass({
           browserHistory.push('/feed');
 
           }
-        });
+      });
     },
-    handleLogoutSubmit(event){
-      alert('hi');
-      event.preventDefault();
-      sessionStorage.removeItem('id');
-      browserHistory.push('/');
-    },
+
 
 
     render: function(){
@@ -71,13 +72,14 @@ var landingContainer = React.createClass({
         <Nav
           handleLogoutSubmit={this.handleLogoutSubmit} />
           :
-        <Nav1 />
+        <Nav1
+          handleLoginSubmit={this.handleLoginSubmit}/>
 
       return(
         <div>
+        {isLogged}
+        {login}
           <div className="postsContainer">
-            {isLogged}
-            {login}
             <br />
             <div>
               Lorem ipsum dolor sit amet, senserit complectitur definitionem id his. Ea sit vivendum persequeris. Essent aeterno sit an, et vim dictas accusata philosophia, iudico impetus convenire ut mea. Ne noluisse lucilius sea, autem detracto conclusionemque nec an, posse antiopam at has. Te iudico discere tibique cum, quidam luptatum vim no, nec aeque nostrum cu. At nam aeterno senserit.
