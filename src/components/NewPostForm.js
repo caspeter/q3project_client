@@ -187,11 +187,67 @@ var CreatePost = React.createClass({
                       onCheck={this.skillsHandleChange}
                     />
                     <Checkbox
-                      label="Sculpting"
+                      label="Photography"
                       type="checkbox"
                       style={styles.checkbox}
-                      name="Sculpting"
-                      value="4"
+                      name="Photography"
+                      value="5"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Metal Work"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Metal Work"
+                      value="6"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Sewing"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Sewing"
+                      value="7"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Knitting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Knitting"
+                      value="8"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Quilting"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Quilting"
+                      value="9"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Wood Carving"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Wood Carving"
+                      value="10"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Collaging"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Collaging"
+                      value="11"
+                      onCheck={this.skillsHandleChange}
+                    />
+                    <Checkbox
+                      label="Graphic Design"
+                      type="checkbox"
+                      style={styles.checkbox}
+                      name="Graphic Design"
+                      value="12"
                       onCheck={this.skillsHandleChange}
                     />
                   </label>
