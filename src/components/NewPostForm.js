@@ -1,14 +1,31 @@
 import React from 'react';
 import { Router, browserHistory} from 'react-router'
 import TextField from 'material-ui/TextField';
-import {grey100, grey900} from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
-
 import request from 'superagent';
+import {orange500, blue500} from 'material-ui/styles/colors';
+
+const styles = {
+  underlineStyle: {
+    borderColor: "#90C15B",
+  },
+  floatingLabelStyle: {
+    color: "#90C15B",
+  },
+  floatingLabelFocusStyle: {
+    color: "#90C15B",
+  },
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  }
+};
 
 var DATABASE_URL = 'http://localhost:5000';
 
@@ -78,9 +95,9 @@ var CreatePost = React.createClass({
       budget: this.state.budget,
       skills: this.state.skills
     }
-    var userId = sessionStorage.getItem('id');
+
     request
-    .post(DATABASE_URL+`/api/posts/` + userId)
+    .post(DATABASE_URL+`/api/posts/2`)
     .send(postObjToSend)
     .end((err,res)=>{
       if (err || !res.ok) {
@@ -102,29 +119,35 @@ var CreatePost = React.createClass({
             <h3>Create A New Post</h3>
             <div className="row newPostPadding">
               <label>
-                Title:
                 <TextField
+                  className="postFormTitle"
                   id="newPostTitle"
                   type="text"
                   name="postTitle"
+                  floatingLabelText="Title"
                   value={this.state.title}
                   onChange={this.titleHandleChange}
-                  // required
+                  underlineFocusStyle={styles.underlineStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  required
                 />
               </label>
             </div>
             <div className="row">
-              <div className="newPostPadding col-md-4">
+              <div className="newPostPadding">
                 <label>
-                  Description:
                   <TextField
+                    className="postFormDescription"
                     multiLine={true} rows={1} rowsMax={5}
                     id=""
                     type="text"
                     name="postDescription"
+                    floatingLabelText="Description"
                     value={this.state.description}
                     onChange={this.descriptionHandleChange}
-                    // required
+                    underlineFocusStyle={styles.underlineStyle}
+                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                    required
                   />
                 </label>
               </div>
@@ -133,14 +156,15 @@ var CreatePost = React.createClass({
               Project Location:
               <div>
                 <label>
-                  Zip Code:
                   <TextField
+                  className="postFormZip"
                     id=""
                     type="text"
                     name="zipCode"
+                    floatingLabelText="Zip Code"
                     value={this.state.zipCode}
                     onChange={this.zipCodeHandleChange}
-                    // required
+                    required
                   />
                 </label>
               </div>
@@ -149,18 +173,19 @@ var CreatePost = React.createClass({
               Project Information:
               <div>
                 <label>
-                  Budget
                   <TextField
                     id=""
                     type="text"
                     name="budget"
+                    floatingLabelText="Budget"
                     value={this.state.budget}
                     onChange={this.budgetHandleChange}
-                    // required
+                    required
                   />
                 </label>
                 <div>
                   <label>
+                    <div class="row">
                     <div className="col-lg-6">Skills Needed:</div>
                     <Checkbox
                       label="None"
@@ -169,6 +194,8 @@ var CreatePost = React.createClass({
                       name="None"
                       value="1"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Painting"
@@ -177,6 +204,8 @@ var CreatePost = React.createClass({
                       name="Painting"
                       value="2"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Drawing"
@@ -185,6 +214,8 @@ var CreatePost = React.createClass({
                       name="Drawing"
                       value="3"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Photography"
@@ -193,6 +224,8 @@ var CreatePost = React.createClass({
                       name="Photography"
                       value="5"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Metal Work"
@@ -201,6 +234,8 @@ var CreatePost = React.createClass({
                       name="Metal Work"
                       value="6"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Sewing"
@@ -209,6 +244,8 @@ var CreatePost = React.createClass({
                       name="Sewing"
                       value="7"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Knitting"
@@ -217,6 +254,8 @@ var CreatePost = React.createClass({
                       name="Knitting"
                       value="8"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Quilting"
@@ -225,6 +264,8 @@ var CreatePost = React.createClass({
                       name="Quilting"
                       value="9"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Wood Carving"
@@ -233,6 +274,8 @@ var CreatePost = React.createClass({
                       name="Wood Carving"
                       value="10"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Collaging"
@@ -241,6 +284,8 @@ var CreatePost = React.createClass({
                       name="Collaging"
                       value="11"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
                     <Checkbox
                       label="Graphic Design"
@@ -249,7 +294,10 @@ var CreatePost = React.createClass({
                       name="Graphic Design"
                       value="12"
                       onCheck={this.skillsHandleChange}
+                      disabled={this.props.disabled}
+                      iconStyle={{fill: "#90C15B"}}
                     />
+                    </div>
                   </label>
                 </div>
               </div>
@@ -259,21 +307,11 @@ var CreatePost = React.createClass({
               backgroundColor="#90C15B"
               type="submit"
               value="submit">Submit</RaisedButton>
-
       </form>
       </div>
       </Card>
     )
   }
 });
-
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
-};
 
 export default CreatePost

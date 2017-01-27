@@ -83,39 +83,35 @@ render: function(){
       {isLogged}
       {login}
         <div className="postsContainer">
-          <br />
-          <div>
-            Lorem ipsum dolor sit amet, senserit complectitur definitionem id his. Ea sit vivendum persequeris. Essent aeterno sit an, et vim dictas accusata philosophia, iudico impetus convenire ut mea. Ne noluisse lucilius sea, autem detracto conclusionemque nec an, posse antiopam at has. Te iudico discere tibique cum, quidam luptatum vim no, nec aeque nostrum cu. At nam aeterno senserit.
-          </div>
-          <br />
-          <div>
-            Idque iisque efficiendi in cum. Eos ad feugait efficiantur, sanctus nominavi argumentum eu pri. No scripta accusam philosophia quo, ne aeterno temporibus pri. Et ridens tritani moderatius sit, sanctus omnesque an pri, ea putant audire qui. Equidem partiendo no pri.
-          </div>
-          <br />
           </div>
           <Carousel>
             <Carousel.Item>
-              <img width={900} height={500} alt="900x500" src="img/sketching.jpg"/>
+              <img width={900} height={500} alt="900x500" src="img/sketching-crop.jpg"/>
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h1 className="landingCarouselHeader">ArtOps</h1>
+                <h2 className="primaryLandingCarouselParagraph">Connecting local Artists with Customers who <i>NEED</i> their products.</h2>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img width={900} height={500} alt="900x500" src="img/art-house-painting.jpg"/>
+              <img width={900} height={500} alt="900x500" src="img/art-house-painting-crop.jpg"/>
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1 className="landingCarouselHeader">Local Artists</h1>
+                <h2 className="secondaryLandingCarouselParagraph">ArtOps allows Local Artists to post information about the kind of work that they create so that other Artists and <br></br>Customers can find them.</h2>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img width={900} height={500} alt="900x500" src="img/art-house-sculpting.jpg"/>
+              <img width={900} height={500} alt="900x500" src="img/art-house-sculpting-crop.jpg"/>
               <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h1 className="landingCarouselHeader">Art Dilettante</h1>
+                <h2 className="secondaryLandingCarouselParagraph">Customers can search through ArtOps posts to find Local Artist, or post their needs to connect them with Artists who can make their project dreams become reality.</h2>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
+        <footer>
+          <p className="footerText">
+            Created By: Anna, Cassie, Evan, Heidi, and Matt
+          </p>
+        </footer>
       </div>
   );
   }
