@@ -9,7 +9,7 @@ import {Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Carousel from 'react-bootstrap/lib/Carousel';
 
-var DATABASE_URL = 'https://artops-server.herokuapp.com';
+var DATABASE_URL = 'http://localhost:5000';
 
 var landingContainer = React.createClass({
 
